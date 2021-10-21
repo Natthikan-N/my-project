@@ -1,0 +1,35 @@
+.list-nav {
+  display: flex;
+  //   float: inline-start;
+  list-style: none;
+  text-decoration: none;
+  color: $color-white;
+}
+
+.list-nav:hover {
+  text-decoration: none;
+  color: $color-white;
+}
+
+.a-link {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: $color-white;
+  font-size: 90%;
+}
+
+.list--card {
+  font-size: 90%;
+}
+
+.list-partNo {
+  margin: 7px auto;
+  text-align: center;
+  list-style: none;
+  text-decoration: none;
+  &:hover {
+    background-color: $color-gray-light;
+  }
+}

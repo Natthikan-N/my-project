@@ -1,0 +1,49 @@
+{
+  "name": "test-2",
+  "version": "1.0.0",
+  "description": "test bootstrap",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "start:prod": "NODE_ENV = production nodemon server.js",
+    "watch:js": "parcel watch ./publish/js/index.js --out-dir ./publish/js --out-file bundler.js",
+    "build:js": "parcel watch ./publish/js/index.js --out-dir ./publish/js --out-file bundler.js",
+    "compile:sass": "node-sass publish/sass/main.scss publish/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "axios": "^0.21.4",
+    "bootstrap": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "express": "^4.17.1",
+    "jade-bootstrap": "^1.0.14",
+    "jquery": "^3.6.0",
+    "mongoose": "^5.13.9",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "pug": "^3.0.2",
+    "sharp": "^0.29.1",
+    "slugify": "^1.5.3"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.7",
+    "parcel-bundler": "^1.12.5",
+    "pdfjs": "^2.4.6",
+    "pdfjs-dist": "^2.10.377",
+    "sass": "^1.43.2",
+    "worker-loader": "^3.0.8"
+  }
+}

@@ -1,0 +1,9 @@
+export const innerfintubePartNo = "447670";
+export const outerfinPartNo = "447673";
+export const sideplatePartNo = "47681";
+export const plateheaderPartNo = "47683";
+export const tankheaderPartNo = "47682";
+export const separatorPartNo = "47684";
+export const capPartNo = "47685";
+export const cupplatePartNo = "47686";
+export const jointPartNo = "447687";

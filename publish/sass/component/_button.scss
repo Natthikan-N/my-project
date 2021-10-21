@@ -1,0 +1,31 @@
+.btn-innav {
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 0.5rem;
+  text-decoration: none;
+  border-radius: 10rem;
+  border-style: none;
+  background-color: $color-red-light;
+  box-shadow: none;
+  color: $color-white;
+}
+
+.btn-innav:hover {
+  text-decoration: none;
+  box-shadow: 5px 5px 5px $color-gray-dark;
+  color: $color-white;
+}
+
+.btn-core-card {
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 0.5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  text-decoration: none;
+  border-radius: 10rem;
+  background-color: $color-red-light;
+  box-shadow: none;
+  color: $color-white;
+  border-style: none;
+}

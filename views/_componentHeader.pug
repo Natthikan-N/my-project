@@ -1,0 +1,17 @@
+mixin listComponentSelection(status ,style, link,text)
+    li.component-part__item 
+        a.component-part__link(href=`${link}`)
+            button.component-part__btn(class=`component-part__btn--${status}`) #{text}
+
+
+mixin navComponent(componentIndex0)
+    
+    -var componentName  =["Inner Fin Tube","Outer Fin","Side Plate","Plate Header","Tank Header","Separator","Cap","Cup Plate","Joint"]
+        ul.component-part__list 
+            each val in componentName  
+                -var route = val.toLowerCase().split(" ").join("")
+                if val==componentIndex0
+                    +listComponentSelection("active","",`/${route}`,`${val}`)
+                else 
+                    +listComponentSelection("","",`${route}`,`${val}`) 
+                

@@ -1,0 +1,42 @@
+mixin componentPartSelect(label,idpart_1,idpart_2,name1,name2)
+    if(idpart_2=="" )
+        if(name1=="joint"||name1=="cap")
+            .mb-3.row 
+                label.col-sm-3.col-form-label(for =`${id}`) #{label}
+                .col-sm-4
+                    select.form-select(id=`${idpart_1}`,name=`${name1}_detail`)
+
+        if(name1=="innerfintubes"||name1=="outerfins")
+            .mb-3.row 
+                label.col-sm-3.col-form-label(for =`${id}`) #{label}
+                .col-sm-4
+                    select.form-select(id=`${idpart_1}`,name=`${name1}_detail`)
+                .col-sm-4
+                    input.form-control(id=`${name1}qty`,type=`text` placeholder=`Amount` name=`${name1}_qty`)
+                
+
+    if(idpart_2 !="")
+        .mb-3.row 
+            label.col-sm-3.col-form-label() #{label}
+            
+            .col-sm-4
+                select.form-select(id=`${idpart_1}`,name=`${name1}`)
+            .col-sm-4
+                select.form-select(id=`${idpart_2}`,name=`${name2}`)
+
+mixin separatorSelect(labeltext,type_1,label_checkbox,id,type_2,placeholder)
+    .mb-3.row 
+        label.col-sm-3.col-form-label(for=`${id}`) #{labeltext}
+        .col-sm-4
+            .form-check     
+                input.form-check-input(id=`${id}`,type=`${type_1}`)
+                label.form-check-label(for=`${id}`) #{label_checkbox}
+        .col-sm-4
+            input.form-control(id=`${id}qty`,type=`${type_2}` placeholder=`${placeholder}` name=`separators_${id}`)
+
+
+mixin coreProperties(labelfor,id,type,placeholder,text,name)
+    .mb-3.row 
+        label.col-sm-3.col-form-label(for= `${labelfor}`) #{text}
+        .col-sm-5 
+            input.form-control(id=`${id}`, type=`${type}`, placeholder=`${placeholder}`, name=`${name}`)

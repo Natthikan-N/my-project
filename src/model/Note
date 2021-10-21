@@ -1,0 +1,186 @@
+const mongoose = require("mongoose");
+// const InnerFinTube = require("./innerFinTubeModel");
+
+const coreSchema = new mongoose.Schema({
+  model: {
+    type: String,
+    required: [true, "Must have model name"],
+    unique: true,
+  },
+  partNo: {
+    type: String,
+    required: [true, "Must have part no."],
+    unique: true,
+  },
+  
+  properties: {
+    type: Object,
+    coreWidth: { type: Number, default: 0 },
+    coreHeight: { type: Number, default: 0 },
+    coreArea: { type: Number },
+    qrCode: { type: String, required: [true, "Must have QR-Code picture"] },
+    kanbanColor: {
+      type: String,
+      required: [true, "Must have QR-Code picture"],
+    },
+  }, //properties
+
+  innerfintubes: {
+  detail: { type: mongoose.Schema.ObjectId, ref: "InnerFinTube" /*same name as schema */},
+    amount: { type: Number },
+  },
+
+  outerfins:{
+    detail: { type: mongoose.Schema.ObjectId, ref: "OuterFin" },
+    amount: { type: Number },
+  },
+
+  sidePlate: {
+    type: Object,
+    joint: {
+      detail: { type: mongoose.Schema.ObjectId, ref: "SidePlate" },
+      amount: { type: Number },
+      // partNo: { type: String, required: [true, "Must have part no."] },
+      // amount: { type: Number, default: 1 },``
+    },
+    turn: {
+      detail: { type: mongoose.Schema.ObjectId, ref: "SidePlate" },
+      amount: { type: Number },
+      // partNo: { type: String, required: [true, "Must have part no."] },
+      // amount: { type: Number, default: 1 },
+    }
+  },
+  
+
+
+
+
+  component: {
+
+    // outerFin: {
+    //   type: Object,
+    //   partNo: { type: String, required: [true, "Must have part no."] },
+    //   amount: { type: Number, required: [true, "Must have amount"] },
+    // },
+    // sidePlate: {
+    //   type: Object,
+    //   joint: {
+    //     type: Object,
+    //     partNo: { type: String, required: [true, "Must have part no."] },
+    //     amount: { type: Number, default: 1 },
+    //   },
+    //   turn: {
+    //     type: Object,
+    //     partNo: { type: String, required: [true, "Must have part no."] },
+    //     amount: { type: Number, default: 1 },
+    //   },
+    // },
+    cupPlate: {
+      type: Object,
+      lower: {
+        type: Object,
+        partNo: { type: String, required: [true, "Must have part no."] },
+        amount: { type: Number, default: 1 },
+      },
+      upper: {
+        type: Object,
+        partNo: { type: String, required: [true, "Must have part no."] },
+        amount: { type: Number, default: 1 },
+      },
+    },
+    plateHeader: {
+      type: Object,
+      top: {
+        type: Object,
+        partNo: { type: String, required: [true, "Must have part no."] },
+        amount: { type: Number, default: 1 },
+      },
+      bottom: {
+        type: Object,
+        partNo: { type: String, required: [true, "Must have part no."] },
+        amount: { type: Number, default: 1 },
+      },
+    },
+    tankHeader: {
+      type: Object,
+      top: {
+        type: Object,
+        partNo: { type: String, required: [true, "Must have part no."] },
+        amount: { type: Number, default: 1 },
+      },
+      bottom: {
+        type: Object,
+        partNo: { type: String, required: [true, "Must have part no."] },
+        amount: { type: Number, default: 1 },
+      },
+    },
+    separator: {
+      type: Object,
+      partition: {
+        type: Object,
+        partNo: { type: String, default: "TG447684-1090" },
+        amount: { type: Number, default: 1 },
+        function: { type: String, default: "Partition" },
+      },
+      in1: {
+        type: Object,
+        partNo: { type: String, default: "TG447684-1100" },
+        amount: { type: Number, default: 1 },
+        function: { type: String, default: "In1" },
+      },
+      in2: {
+        type: Object,
+        partNo: { type: String, default: "TG447684-1110" },
+        amount: { type: Number, default: 1 },
+        function: { type: String, default: "In2" },
+      },
+      in3: {
+        type: Object,
+        partNo: { type: String, default: "TG447684-1120" },
+        amount: { type: Number, default: 1 },
+        function: { type: String, default: "In3" },
+      },
+      out1: {
+        type: Object,
+        partNo: { type: String, default: "TG447684-1130" },
+        amount: { type: Number, default: 1 },
+        function: { type: String, default: "Out1" },
+      },
+      out2: {
+        type: Object,
+        partNo: { type: String, default: "TG447684-1140" },
+        amount: { type: Number, default: 1 },
+        function: { type: String, default: "Out2" },
+      },
+      out3: {
+        type: Object,
+        partNo: { type: String, default: "TG447684-1150" },
+        amount: { type: Number, default: 1 },
+        function: { type: String, default: "Out3" },
+      },
+    },
+    cap: {
+      type: Object,
+      partNo: { type: String, default: "TG447685-0033" },
+      amount: { type: Number, default: 3 },
+    },
+    plateJoint: {
+      type: Object,
+      partNo: { type: String, required: [true, "Must have part no."] },
+    },
+    finalProduct: {
+      type: [String],
+    },
+  }, //component
+}); //coreSchema
+
+//middleware
+
+// coreSchema.pre(/^find/, function (next) {
+//   this.populate("component");
+//   console.log("hello from coreModel");
+//   //next();
+// });
+
+const Core = mongoose.model("Core", coreSchema);
+module.exports = Core;

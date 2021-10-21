@@ -1,0 +1,53 @@
+extends base
+
+block append head
+
+block content
+    
+        main.container.bg-light(style="padding : 20px;")
+            section 
+                h2 
+                    strong= part.partName
+                    strong   properties : 
+                .box 
+                    h3 Part No.: 
+                        span= part.partNo
+                    
+                    .row.g-0 
+                        .col-4.column
+                            img.mx-auto.d-block.picProp(src=part.img alt="product")
+                        .col-4.column= part.partName 
+                            span  matrix chart
+                        .col-4.column
+                            case part.partName
+                                when "Outer Fin"
+                                        ul 
+                                            li Fin pitch : 
+                                                span= part.pitch
+                                            li Fin wave : 
+                                                span= part.wave
+                                            li Fin slit : 
+                                                span= part.slit 
+                                            li Lenght : 
+                                                span= part.lenght
+                                            li QR-Code : 
+                                                br
+                                                img(src="..." alt="qrCode")
+
+
+                                when "Inner Fin Tube"
+                                        ul 
+                                            li Length : 
+                                                span= part.length
+
+                                default
+                                        ul 
+                                            li Side : 
+                                                span= part.side
+                                
+                                
+                                                               
+                            a.btn.btn-info(href="#") Technical information
+                            |  
+                            a.btn.btn-info(href="#") Tooling
+            

@@ -1,0 +1,99 @@
+{
+                "innerfintubes": {
+                    "detail": "60abab912b0740030c66859f",
+                    "amount": 34,
+                    "name": "Inner Fin Tube"
+                },
+                "outerfins": {
+                    "detail":"60ab9aa72b0740030c668596",
+                    "amount": 18,
+                    "name": "Outer Fin"
+                },
+                "sideplates": {
+                    "name": "Side Plate",
+                    "parts": [
+                        {
+                            "amount": 1,
+                            "detail": "60abac4e2b0740030c6685a4"
+                        },
+                        {
+                            "amount": 1,
+                            "detail": "60abad262b0740030c6685ad"
+                            
+                        }
+                    ]
+                },
+                "cupplates": {
+                    "name": "Cup Plate",
+                    "parts": [
+                        {
+                            "amount": 1,
+                            "detail": "60abad862b0740030c6685b2"
+                        },
+                        {
+                            "amount": 1,
+                            "detail": "60abadeb2b0740030c6685b9"
+                            
+                        }
+                    ]
+                },
+                "plateheaders": {
+                    "name": "Plate Header",
+                    "parts": [
+                        {
+                            "amount": 1,
+                            "detail": "60abaed52b0740030c6685c0"
+                        },
+                        {
+                            "amount": 1,
+                            "detail": "60abaf732b0740030c6685c8"
+                        }
+                    ]
+                },
+                "tankheaders": {
+                    "name": "Tank Header",
+                    "parts": [
+                        {
+                            "amount": 1,
+                            "detail": "60abb0b62b0740030c6685cf"
+                        },
+                        {
+                            "amount": 1,
+                            "detail": "60abb1872b0740030c6685d6"
+                        }
+                    ]
+                },
+                "separators": {
+                    "name": "Separator",
+                    "parts": [
+                        {
+                            "detail": "60abb59d2b0740030c6685df",
+                            "amount": 1
+                        },
+                        {
+                            "detail": "60abb5e82b0740030c6685e2",
+                            "amount": 1
+                        }
+                    ]
+                },
+                "cap": {
+                    "amount": 3,
+                    "detail": "60abb6302b0740030c6685e5",
+                    "name": "Cap"
+                },
+                "joint": {
+                    "amount": 1,
+                    "detail": "60abb7d92b0740030c6685e8",
+                    "name": "Joint"
+                },
+                "model": "IMV Rear",
+                "partNo": "TG447610-9220",
+                "properties": {
+                    "coreWidth": 118.9,
+                    "coreHeight": 251,
+                    "coreArea": 1.46,
+                    "qrCode": "QR-Number",
+                    "kanbanColor": "white with 3 lines"
+                },
+                "slug": "IMV-Rear"
+}

@@ -1,0 +1,59 @@
+@import "../abstracts/variables";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //1rem = 10px
+}
+
+body {
+  font-family: Verdana;
+  line-height: 1.6;
+  background-image: linear-gradient(0deg, $color-red-dark, $color-red-light);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+}
+
+.container__body {
+  max-width: 120rem;
+
+  margin: 2.5rem auto;
+  background-color: $color-gray-light;
+  box-shadow: $color-shadow;
+  min-height: 50rem;
+}
+
+.container {
+  &-body {
+    margin-top: 0;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 0;
+    background-color: $color-gray-dark;
+    color: $color-white;
+  }
+  // &-header {
+  //   margin-top: 0;
+  //   margin-left: 5rem;
+  //   margin-right: 5rem;
+  //   margin-bottom: 0;
+  //   background-color: $color-black-dark;
+  // }
+  // &-footer {
+  //   margin-top: 0;
+  //   margin-left: 5rem;
+  //   margin-right: 5rem;
+  //   margin-bottom: 0;
+  //   background-color: $color-black-dark;
+  // }
+}

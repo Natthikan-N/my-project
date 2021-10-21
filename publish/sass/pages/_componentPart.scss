@@ -1,0 +1,69 @@
+///////this page link to all element in
+//////////// innerfintube.pug page
+////////////    >_componentHeader.pug
+////////////    >_componentTable.pug
+@import "../abstracts/variables";
+
+.component-part {
+  margin: 2rem;
+  padding: 0;
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  &__btn {
+    margin: 0;
+    padding: 1rem;
+    background-color: $color-gray-light;
+    border-style: solid;
+    border-color: $color-gray-light;
+    border-width: 0.1px;
+
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.3rem;
+
+    text-transform: uppercase;
+  }
+
+  &__btn--active {
+    background-color: $color-gray-dark;
+    border-color: $color-gray-dark;
+    color: $color-white;
+    box-shadow: $color-shadow-tab;
+  }
+
+  &__btn:hover {
+    background-color: $color-gray-light-1;
+  }
+
+  &__link:link {
+    text-decoration: none;
+  }
+
+  ////////////////table view////////////////
+
+  &__view {
+    background-color: green;
+  }
+
+  &__table {
+  }
+
+  &__table-item {
+    font-size: 1.5rem;
+  }
+
+  &__table-header + &__table-item {
+    border: 3px solid purple;
+  }
+}

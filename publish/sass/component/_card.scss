@@ -1,0 +1,60 @@
+@import "list";
+@import "button";
+
+.box-card {
+  display: flex;
+  box-shadow: 10px 20px 20px rgb(19, 15, 15);
+  background-color: #752c2c;
+  padding: 10px;
+  margin: 50px 50px 50px 20px;
+  justify-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
+}
+
+// .box {
+//   margin-top: 30px;
+//   padding: 20px;
+//   display: grid;
+//   background-color: #752c2c;
+//   border-radius: 10px;
+//   box-shadow: 15px 15px 15px #6e7f8b;
+// }
+
+.picProp {
+  margin: 20px;
+  max-width: 250px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.column {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
+  /* margin: 20px; */
+  /* padding: 20px; */
+}
+
+.card-component {
+  display: flex;
+  box-shadow: 10px 20px 20px rgb(175, 167, 167);
+  background-color: #a9c5df;
+  padding: 10px;
+  margin: 50px 50px 50px 50px;
+  justify-items: center;
+}
+
+.tab-left {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background-color: brown;
+  /* float: left;
+      width: 30%;
+      height: 300px;
+      background-color: brown; */
+}
+
+.borderbox {
+  border-color: #6e7f8b;
+}

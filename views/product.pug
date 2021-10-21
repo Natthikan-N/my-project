@@ -1,0 +1,49 @@
+extends base
+
+include _component  
+
+block append head
+
+block content
+    
+    main.container-body(style="padding : 20px;")
+        section
+            h2 Model properties : 
+            .box 
+                h3 Model :
+                    strong= core.model
+                h3 Core Part No : 
+                    strong=core.partNo
+                    
+                .row.g-0 
+                    .col-4.column                         
+                        img.mx-auto.d-block.picProp(src= core.img alt="product")
+                    .col-4.column Core Matrix chart
+                    .col-4.column
+                        ul
+                            li Core Width : 239.5
+                            li Core Height :231 
+                            li Core surface area : 2.61
+                            li QR-Code Core : 
+                                br
+                                img(src="..." alt="QR-code")
+                            li Kanban Color : 
+                                br
+                                img(src="..." alt="kanban")
+                        a.btn.btn-info(href="#") Technical information
+                        a.btn.btn-info(href="#") Tooling
+        hr
+    
+        secton 
+            h2  Component Part :
+            div 
+                +component(core.innerfintubes)
+                +component(core.outerfins)
+                +component(core.sideplates)
+                +component(core.cupplates)
+                +component(core.plateheaders)
+                +component(core.tankheaders)
+                +component(core.separators)
+                +component(core.cap)
+                +component(core.joint)
+                    

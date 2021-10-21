@@ -1,0 +1,12 @@
+extends base
+include _componentHeader
+block append head
+
+
+block content
+
+    .component-part
+        +navComponent(component[0].partName)
+
+        .component-part__view
+            include componentTable

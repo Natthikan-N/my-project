@@ -1,0 +1,6 @@
+node-modules/
+.cache/
+backup/
+.vscode/
+Database Collection/
+node_modules

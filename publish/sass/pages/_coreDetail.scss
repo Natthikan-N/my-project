@@ -1,0 +1,85 @@
+@import "../abstracts/variables";
+
+.core-detail {
+  margin: 0;
+  padding: 1rem;
+
+  &__list {
+    font-family: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+  }
+  &__item {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    background-color: $color-white;
+    box-shadow: $color-shadow;
+    border-radius: 1rem;
+    list-style: none;
+    width: 25rem;
+    margin: 2rem;
+    padding: 1rem;
+  }
+
+  &__info {
+    padding: 0rem;
+    margin: 2rem 0;
+    // background-color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__list-info {
+    padding: 1rem;
+    margin: 0;
+  }
+
+  &__list-info-item {
+    text-decoration: none;
+    list-style: none;
+    color: $color-black;
+    font-size: 2rem;
+    padding-top: 0.6rem;
+
+    &:not(:last-child) {
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid $color-gray-light;
+    }
+  }
+
+  &__img {
+    max-width: 20rem;
+    margin: 1.5rem;
+    align-self: center;
+  }
+
+  &__heading {
+    font-family: Verdana;
+    flex: 5;
+    font-weight: bold;
+    align-self: center;
+    color: $color-black;
+    // background-color: green;
+    // border-bottom: 1px solid $color-gray-dark;
+  }
+  &__link:link {
+    text-decoration: none;
+  }
+}
+
+// #card1 {
+//   background-color: blueviolet;
+// }
+
+// #card2 {
+//   background-color: green;
+// }
+
+// #card3 {
+//   background-color: orangered;
+// }

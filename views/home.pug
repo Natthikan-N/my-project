@@ -1,0 +1,28 @@
+extends base
+block append head
+
+block content
+
+    .content 
+        nav.sidebar     
+            form.sidebar-form(action="")
+                input.sidebar-form__search-input(type="text" placeholder="SEARCH CORE") 
+                button.sidebar-form__search-button 
+                    svg.sidebar-form__search-icon   
+                        use(xlink:href="img/Icon/symbol-defs.svg#icon-magnifying-glass")
+            .sidebar-content 
+                ul.side-nav     
+                    li.side-nav__item
+                        a.side-nav__link(href="#")
+                            span TG445566-8888 
+
+        main.qpoint-view    
+            .qpoint-heading 
+                h1.qpoint-heading__head
+                    span.qpoint-heading__part-no TG445566-7777
+                    span.qpoint-heading__pipe  | 
+                    span.qpoint-heading__model T99N
+
+            .qpoint-viewer 
+                .qpoint-viewer__card
+                    img(src="img/Q-point/CR.jpg", alt="qpoint" class="qpoint-viewer__img")

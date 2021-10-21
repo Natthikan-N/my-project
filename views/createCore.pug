@@ -1,0 +1,46 @@
+extends base
+include _componentSelect
+
+block append head
+
+block content
+
+    main.container.bg-light(style="padding : 20px;")
+
+        
+        form.form.createCore
+            h3 
+                strong Core Evaporator Properties
+            +coreProperties("partnoinput","partnoinput","text","TG447610-xxxx / TG446610-xxxx / TG446620-xxxx","Core Part No. :","partNo")
+            +coreProperties("modelname","modelname","text","","Model Name:","model")
+            +coreProperties("width","width","text","","Width:","coreWidth")
+            +coreProperties("height","height","text","","Height:","coreHeight")
+            +coreProperties("area","area","text","","Area:","coreArea")
+            +coreProperties("qrcode","qrcode","text","","QR Code:","qrCode")
+            +coreProperties("kanban","kanban","text","","Kanban color picture:","kanbanColor")
+            .mb-3.row 
+                label.col-sm-3.col-form-label(for= `coreImg`) Core Image :
+                .col-sm-5 
+                    input.form-control(id=`coreImg`, type=`file`, accept="image/*")
+
+            h3 
+                strong Component part
+            
+                +componentPartSelect("Inner Fin Tube Part no.:","innerfintubelist","","innerfintubes","")
+                +componentPartSelect("Outer Fin Part no.:","outerfinlist","","outerfins","")
+                +componentPartSelect("Side plate Part no.:","sideplatetoplist","sideplatebuttomlist","sideplates_top","sideplates_buttom")
+                +componentPartSelect("Plate Header Part no.:","plateheadertoplist","plateheaderbuttomlist","plateheaders_top","plateheaders_buttom")
+                +componentPartSelect("Tank Header Part no.:","tankheadertoplist","tankheaderbuttomlist","tankheaders_top","tankheaders_buttom")           
+                +componentPartSelect("Cup plate Part no.:","cupplatelowerlist","cupplateupperlist","cupplates_lower","cupplates_upper") 
+                +separatorSelect("Separator Part no.:","checkbox","TG447684-1090","1090","text","Amount")
+                +separatorSelect("","checkbox","TG447684-1100","1100","text","Amount")
+                +separatorSelect("","checkbox","TG447684-1110","1110","text","Amount")
+                +separatorSelect("","checkbox","TG447684-1120","1120","text","Amount")
+                +separatorSelect("","checkbox","TG447684-1130","1130","text","Amount")
+                +separatorSelect("","checkbox","TG447684-1140","1140","text","Amount")
+                +separatorSelect("","checkbox","TG447684-1150","1150","text","Amount")
+                +componentPartSelect("Joint Part no.:","jointlist","","joint","")
+                +componentPartSelect("Cap Part no.:","caplist","","cap","")
+                .mb-3.row 
+                    button.btn.btn-danger.createCorebtn 
+                        strong Create New Core
