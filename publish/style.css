@@ -415,8 +415,9 @@ footer {
     padding: 1rem;
     background-color: #a8a8a8;
     border-style: solid;
-    border-color: #a8a8a8;
+    border-color: #727272;
     border-width: 0.1px;
+    border-radius: 10% 10% 0 0;
     font-family: inherit;
     font-weight: bold;
     font-size: 1.3rem;
@@ -431,11 +432,47 @@ footer {
   .component-part__link:link {
     text-decoration: none; }
   .component-part__view {
-    background-color: green; }
-  .component-part__table-item {
+    background-color: #323536;
+    padding: 3rem; }
+  .component-part__table {
+    width: 100%; }
+  .component-part__table-row:hover {
+    background-color: #727272; }
+  .component-part__table-header, .component-part__table-item {
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    border: 1.5px solid #9b9b9b; }
+    .component-part__table-header-no, .component-part__table-item-no {
+      width: 5%; }
+    .component-part__table-header-partno, .component-part__table-item-partno {
+      width: 35%; }
+    .component-part__table-header-prob-1, .component-part__table-item-prob-1 {
+      width: auto; }
+    .component-part__table-header-no, .component-part__table-header-partno, .component-part__table-header-prob-1, .component-part__table-item-no, .component-part__table-item-partno, .component-part__table-item-prob-1 {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 10px;
+      border: 1.5px solid #9b9b9b; }
+  .component-part__btn-add {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 10rem;
+    background-color: #ffffff;
+    border-style: none;
+    box-shadow: 0.5rem 0.5rem 0.7rem #000000; }
+  .component-part__input-partNo, .component-part__input-length {
+    margin: 0;
+    width: 80%;
+    height: 2rem;
+    border-style: none;
+    border-radius: 5px;
+    padding: 1.5rem;
     font-size: 1.5rem; }
-  .component-part__table-header + .component-part__table-item {
-    border: 3px solid purple; }
+    .component-part__input-partNo:focus, .component-part__input-length:focus {
+      border-style: none; }
 
 .content {
   margin-top: 0;
@@ -612,8 +649,9 @@ footer {
     padding: 1rem;
     background-color: #a8a8a8;
     border-style: solid;
-    border-color: #a8a8a8;
+    border-color: #727272;
     border-width: 0.1px;
+    border-radius: 10% 10% 0 0;
     font-family: inherit;
     font-weight: bold;
     font-size: 1.3rem;
@@ -628,8 +666,44 @@ footer {
   .component-part__link:link {
     text-decoration: none; }
   .component-part__view {
-    background-color: green; }
-  .component-part__table-item {
+    background-color: #323536;
+    padding: 3rem; }
+  .component-part__table {
+    width: 100%; }
+  .component-part__table-row:hover {
+    background-color: #727272; }
+  .component-part__table-header, .component-part__table-item {
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    border: 1.5px solid #9b9b9b; }
+    .component-part__table-header-no, .component-part__table-item-no {
+      width: 5%; }
+    .component-part__table-header-partno, .component-part__table-item-partno {
+      width: 35%; }
+    .component-part__table-header-prob-1, .component-part__table-item-prob-1 {
+      width: auto; }
+    .component-part__table-header-no, .component-part__table-header-partno, .component-part__table-header-prob-1, .component-part__table-item-no, .component-part__table-item-partno, .component-part__table-item-prob-1 {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 10px;
+      border: 1.5px solid #9b9b9b; }
+  .component-part__btn-add {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 10rem;
+    background-color: #ffffff;
+    border-style: none;
+    box-shadow: 0.5rem 0.5rem 0.7rem #000000; }
+  .component-part__input-partNo, .component-part__input-length {
+    margin: 0;
+    width: 80%;
+    height: 2rem;
+    border-style: none;
+    border-radius: 5px;
+    padding: 1.5rem;
     font-size: 1.5rem; }
-  .component-part__table-header + .component-part__table-item {
-    border: 3px solid purple; }
+    .component-part__input-partNo:focus, .component-part__input-length:focus {
+      border-style: none; }

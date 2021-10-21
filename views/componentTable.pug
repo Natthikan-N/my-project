@@ -5,223 +5,356 @@ case component[0].partName
         table.component-part__table
             thead.component-part__table-thead
                 tr.component-part__table-row
-                    th.component-part__table-header No
-                    th.component-part__table-header Part No
-                    th.component-part__table-header Length
-            tbody.component-part__table-body  
-                tr.component-part__table-row 
-                    td.component-part__table-item  1
-                    td.component-part__table-item  TG445566-9999 
-                    td.component-part__table-item  262.5
-                tr.component-part__table-row 
-                    td.component-part__table-item  1
-                    td.component-part__table-item  TG445566-9999 
-                    td.component-part__table-item  262.5
-                tr.component-part__table-row 
-                    td.component-part__table-item  1
-                    td.component-part__table-item  TG445566-9999 
-                    td.component-part__table-item  262.5
-                tr.component-part__table-row 
-                    td.component-part__table-item  1
-                    td.component-part__table-item  TG445566-9999 
-                    td.component-part__table-item  262.5
-                tr.component-part__table-row 
-                    td.component-part__table-item  1
-                    td.component-part__table-item  TG445566-9999 
-                    td.component-part__table-item  262.5
-
-
-
-case component[0].partName
-    when "Inner Fin Tube" 
-        table.table.table-dark.table-hover 
-            thead   
-                tr 
-                    th(scope = "col" style="width:5%") No 
-                    th(scope = "col" ) Part No
-                    th(scope = "col" ) Length
-                    
-            tbody
-                    each compo,index in component
-                        tr 
-                            th(scope = "row")= index+1
-                            td= compo.partNo
-                            td= compo.length
-            tbody
-                tr 
-                    form.form.addnewinnnerfintube
-                        td
-                            button.btn.btn-danger Add
-                        td 
-                            input#partNo(type="text", name="partNo")
-                        td
-                            input#length(type="text", name="length")
-                        
-                        
-        
+                    th.component-part__table-header-no No
+                    th.component-part__table-header-partno Part No
+                    th.component-part__table-header-prob-1 Length
+            tbody.component-part__table-body 
+                each compo,index in component 
+                    tr.component-part__table-row 
+                        td.component-part__table-item-no= index+1
+                        td.component-part__table-item-partno= compo.partNo 
+                        td.component-part__table-item-prob-1= compo.length
+            tbody.component-part__table-body
+                form.addnewinnnerfintube 
+                    tr.component-part__table-row
+                        td.component-part__table-item
+                            a.component-part__link 
+                                button.component-part__btn-add
+                                    svg.sidebar-form__search-icon   
+                                        use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
+                        td.component-part__table-item
+                            input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
+                        td.component-part__table-item
+                            input.component-part__input-length#length(type="text", name="length", placeholder="Input Property")
 
     when "Outer Fin"
-        table.table.table-dark.table-hover 
-            thead   
-                tr 
-                    th(scope = "col" style="width:5%" ) No 
-                    th(scope = "col" ) Part No
-                    th(scope = "col" ) Fin Length
-                    th(scope = "col" ) Fin Pitch
-                    th(scope = "col" ) Fin Wave
-                    th.w-5(scope = "col" ) Slit
-                    
-            tbody
-                    each compo,index in component
-                        tr 
-                            th(scope = "row")= index+1
-                            td= compo.partNo
-                            td= compo.length
-                            td= compo.pitch 
-                            td= compo.wave 
-                            td= compo.slit
-            tbody
-                tr 
-                    form.form.addnewouterfin
-                        td
-                            button.btn.btn-danger Add
-                        td 
-                            input#partNo(type="text", name="partNo", style="width: 90%" )
-                        td
-                            input#length(type="text", name="length",style="width: 90%" )
-                        td
-                            input#pitch(type="text", name="pitch" ,style="width: 90%" )
-                        td
-                            input#wave(type="text", name="wave" ,style="width: 90%" )
-                        td
-                            input#slit(type="text", name="slit" ,style="width: 90%"  )
+        table.component-part__table
+            thead.component-part__table-thead
+                tr.component-part__table-row
+                    th.component-part__table-header-no No
+                    th.component-part__table-header-partno Part No
+                    th.component-part__table-header-prob-1 Fin Length
+                    th.component-part__table-header-prob-1 Fin Pitch
+                    th.component-part__table-header-prob-1 Fin Wave
+                    th.component-part__table-header-prob-1 Fin Slit
+            tbody.component-part__table-body   
+                each compo,index in component 
+                    tr.component-part__table-row 
+                        td.component-part__table-item-no= index+1
+                        td.component-part__table-item-partno= compo.partNo 
+                        td.component-part__table-item-prob-1= compo.length
+                        td.component-part__table-item-prob-1= compo.pitch
+                        td.component-part__table-item-prob-1= compo.wave
+                        td.component-part__table-item-prob-1= compo.slit
+            tbody.component-part__table-body
+                form.addnewouterfin
+                    tr.component-part__table-row
+                        td.component-part__table-item
+                            a.component-part__link 
+                                button.component-part__btn-add
+                                    svg.sidebar-form__search-icon   
+                                        use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
+                        td.component-part__table-item
+                            input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
+                        td.component-part__table-item
+                            input.component-part__input-length#length(type="text", name="length", placeholder="Fin Length")
+                        td.component-part__table-item
+                            input.component-part__input-partNo#pitch(type="text", name="pitch" ,placeholder="Fin Pitch")
+                        td.component-part__table-item
+                            input.component-part__input-partNo#wave(type="text", name="wave" ,placeholder="Fin Wave")
+                        td.component-part__table-item
+                            input.component-part__input-partNo#slit(type="text", name="slit" ,placeholder="Fin Slit")
 
-    when "Cup Plate" 
-        table.table.table-dark.table-hover 
-            thead   
-                tr 
-                    th(scope = "col" style="width:5%") No 
-                    th(scope = "col") Part No
-                    th(scope = "col") Side
-                    
-            tbody
-                    each compo,index in component
-                        tr 
-                            th(scope = "row")= index+1
-                            td= compo.partNo
-                            td= compo.side
-            tbody
-                tr 
-                    form.form.addnewcupplate
-                        td
-                            button.btn.btn-danger Add
-                        td 
-                            input#partNo(type="text", name="partNo")
-                        td
-                            input#side(type="text", name="side")
-
+    when "Cup Plate"
+        table.component-part__table
+            thead.component-part__table-thead
+                tr.component-part__table-row
+                    th.component-part__table-header-no No
+                    th.component-part__table-header-partno Part No
+                    th.component-part__table-header-prob-1 Side 
+            tbody.component-part__table-body 
+                each compo,index in component 
+                    tr.component-part__table-row 
+                        td.component-part__table-item-no= index+1
+                        td.component-part__table-item-partno= compo.partNo 
+                        td.component-part__table-item-prob-1= compo.side 
+            tbody.component-part__table-body
+                form.addnewcupplate
+                    tr.component-part__table-row
+                        td.component-part__table-item
+                            a.component-part__link 
+                                button.component-part__btn-add
+                                    svg.sidebar-form__search-icon   
+                                        use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
+                        td.component-part__table-item
+                            input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
+                        td.component-part__table-item
+                            input.component-part__input-length#side(type="text", name="side", placeholder="Input Cup Side")
     
-    
-    when "Separator" 
-        table.table.table-dark.table-hover  
-            thead   
-                tr 
-                    th(scope = "col" style="width:5%") No 
-                    th(scope = "col") Part No
-                    th(scope = "col") Function
-                    
-            tbody
-                    each compo,index in component
-                        tr 
-                            th(scope = "row")= index+1
-                            td= compo.partNo
-                            td= compo.func
-
-            tbody
-            tr 
-                form.form.addseparator
-                    td
-                        button.btn.btn-danger Add
-                    td 
-                        input#partNo(type="text", name="partNo")
-                    td
-                        input#function(type="text", name="function")
-
+    when "Separator"
+        table.component-part__table
+            thead.component-part__table-thead
+                tr.component-part__table-row
+                    th.component-part__table-header-no No
+                    th.component-part__table-header-partno Part No
+                    th.component-part__table-header-prob-1 Function 
+            tbody.component-part__table-body 
+                each compo,index in component 
+                    tr.component-part__table-row 
+                        td.component-part__table-item-no= index+1
+                        td.component-part__table-item-partno= compo.partNo 
+                        td.component-part__table-item-prob-1= compo.func
+            tbody.component-part__table-body
+                form.addseparator
+                    tr.component-part__table-row
+                        td.component-part__table-item
+                            a.component-part__link 
+                                button.component-part__btn-add
+                                    svg.sidebar-form__search-icon   
+                                        use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
+                        td.component-part__table-item
+                            input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
+                        td.component-part__table-item
+                            input.component-part__input-length#function(type="text", name="function", placeholder="Function")
     when "Cap" 
-        table.table.table-dark.table-hover  
-            thead   
-                tr 
-                    th(scope = "col" style="width:5%") No 
-                    th(scope = "col") Part No
-                    
-            tbody
-                    each compo,index in component
-                        tr 
-                            th(scope = "row")= index+1
-                            td= compo.partNo
-
-            tbody
-                tr 
-                    form.form.addcap
-                        td
-                            button.btn.btn-danger Add
-                        td 
-                            input#partNo(type="text", name="partNo")
-            
-        
-    when "Joint" 
-        table.table.table-dark.table-hover  
-            thead   
-                tr 
-                    th(scope = "col" style="width:5%") No 
-                    th(scope = "col") Part No
-                    th(scope = "col") Type
-                    
-            tbody
-                    each compo,index in component
-                        tr 
-                            th(scope = "row")= index+1
-                            td= compo.partNo
-                            td= compo.type
-
-            tbody
-                tr 
-                    form.form.addjoint
-                        td
-                            button.btn.btn-danger Add
-                        td 
-                            input#partNo(type="text", name="partNo")
-                        td 
-                            input#type(type="text", name="type")
-
-
+        table.component-part__table
+            thead.component-part__table-thead
+                tr.component-part__table-row
+                    th.component-part__table-header-no No
+                    th.component-part__table-header-partno Part No
+            tbody.component-part__table-body 
+                each compo,index in component 
+                    tr.component-part__table-row 
+                        td.component-part__table-item-no= index+1
+                        td.component-part__table-item-partno= compo.partNo
+            tbody.component-part__table-body
+                form.addcap
+                    tr.component-part__table-row
+                        td.component-part__table-item
+                            a.component-part__link 
+                                button.component-part__btn-add
+                                    svg.sidebar-form__search-icon   
+                                        use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
+                        td.component-part__table-item
+                            input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
+    when "Joint"                    
+        table.component-part__table
+            thead.component-part__table-thead
+                tr.component-part__table-row
+                    th.component-part__table-header-no No
+                    th.component-part__table-header-partno Part No
+                    th.component-part__table-header-prob-1 Type 
+            tbody.component-part__table-body 
+                each compo,index in component 
+                    tr.component-part__table-row 
+                        td.component-part__table-item-no= index+1
+                        td.component-part__table-item-partno= compo.partNo 
+                        td.component-part__table-item-prob-1= compo.type
+            tbody.component-part__table-body
+                form.addjoint
+                    tr.component-part__table-row
+                        td.component-part__table-item
+                            a.component-part__link 
+                                button.component-part__btn-add
+                                    svg.sidebar-form__search-icon   
+                                        use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
+                        td.component-part__table-item
+                            input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
+                        td.component-part__table-item
+                            input.component-part__input-length#type(type="text", name="type", placeholder="Type")
     default
-        table.table.table-dark.table-hover  
-            thead   
-                tr 
-                    th(scope = "col" style="width:5%") No 
-                    th(scope = "col") Part No
-                    th(scope = "col") Side
-                    th(scope = "col") Length
-                    
-            tbody
-                    each compo,index in component
-                        tr 
-                            th(scope = "row")= index+1
-                            td= compo.partNo
-                            td= compo.side 
+        table.component-part__table
+            thead.component-part__table-thead
+                tr.component-part__table-row
+                    th.component-part__table-header-no No
+                    th.component-part__table-header-partno Part No
+                    th.component-part__table-header-prob-1 Side
+                    th.component-part__table-header-prob-1 Length 
+            tbody.component-part__table-body 
+                each compo,index in component 
+                    tr.component-part__table-row 
+                        td.component-part__table-item-no= index+1
+                        td.component-part__table-item-partno= compo.partNo 
+                        td.component-part__table-item-prob-1= compo.side
+            tbody.component-part__table-body
+                form.addnewcompo
+                    tr.component-part__table-row
+                        td.component-part__table-item
+                            a.component-part__link 
+                                button.component-part__btn-add
+                                    svg.sidebar-form__search-icon   
+                                        use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
+                        td.component-part__table-item
+                            input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
+                        td.component-part__table-item
+                            input.component-part__input-length#side(type="text", name="side", placeholder="Side")
+                        td.component-part__table-item
+                            input.component-part__input-length#length(type="text", name="length", placeholder="Length")
 
-            tbody
-                tr 
-                    form.form.addnewcompo
-                        td
-                            button.btn.btn-danger Add
-                        td 
-                            input#partNo(type="text", name="partNo")
-                        td
-                            input#side(type="text", name="side")
-                        td
-                            input#length(type="text", name="length")
+
+
+//- case component[0].partName
+//-     when "Inner Fin Tube" 
+        
+//-     when "Outer Fin"
+//-         //- table.table.table-dark.table-hover 
+//-         //-     thead   
+//-         //-         tr 
+//-         //-             th(scope = "col" style="width:5%" ) No 
+//-         //-             th(scope = "col" ) Part No
+//-         //-             th(scope = "col" ) Fin Length
+//-         //-             th(scope = "col" ) Fin Pitch
+//-         //-             th(scope = "col" ) Fin Wave
+//-         //-             th.w-5(scope = "col" ) Slit
+                    
+//-         //-     tbody
+//-         //-             each compo,index in component
+//-         //-                 tr 
+//-         //-                     th(scope = "row")= index+1
+//-         //-                     td= compo.partNo
+//-         //-                     td= compo.length
+//-         //-                     td= compo.pitch 
+//-         //-                     td= compo.wave 
+//-         //-                     td= compo.slit
+//-         //-     tbody
+//-         //-         tr 
+//-         //-             form.form.addnewouterfin
+//-         //-                 td
+//-         //-                     button.btn.btn-danger Add
+//-         //-                 td 
+//-         //-                     input#partNo(type="text", name="partNo", style="width: 90%" )
+//-         //-                 td
+//-         //-                     input#length(type="text", name="length",style="width: 90%" )
+//-         //-                 td
+//-         //-                     input#pitch(type="text", name="pitch" ,style="width: 90%" )
+//-         //-                 td
+//-         //-                     input#wave(type="text", name="wave" ,style="width: 90%" )
+//-         //-                 td
+//-         //-                     input#slit(type="text", name="slit" ,style="width: 90%"  )
+
+//-     when "Cup Plate" 
+//-         //- table.table.table-dark.table-hover 
+//-         //-     thead   
+//-         //-         tr 
+//-         //-             th(scope = "col" style="width:5%") No 
+//-         //-             th(scope = "col") Part No
+//-         //-             th(scope = "col") Side
+                    
+//-         //-     tbody
+//-         //-             each compo,index in component
+//-         //-                 tr 
+//-         //-                     th(scope = "row")= index+1
+//-         //-                     td= compo.partNo
+//-         //-                     td= compo.side
+//-         //-     tbody
+//-         //-         tr 
+//-         //-             form.form.addnewcupplate
+//-         //-                 td
+//-         //-                     button.btn.btn-danger Add
+//-         //-                 td 
+//-         //-                     input#partNo(type="text", name="partNo")
+//-         //-                 td
+//-         //-                     input#side(type="text", name="side")
+    
+//-     when "Separator" 
+//-         //- table.table.table-dark.table-hover  
+//-         //-     thead   
+//-         //-         tr 
+//-         //-             th(scope = "col" style="width:5%") No 
+//-         //-             th(scope = "col") Part No
+//-         //-             th(scope = "col") Function
+                    
+//-         //-     tbody
+//-         //-             each compo,index in component
+//-         //-                 tr 
+//-         //-                     th(scope = "row")= index+1
+//-         //-                     td= compo.partNo
+//-         //-                     td= compo.func
+
+//-         //-     tbody
+//-         //-     tr 
+//-         //-         form.form.addseparator
+//-         //-             td
+//-         //-                 button.btn.btn-danger Add
+//-         //-             td 
+//-         //-                 input#partNo(type="text", name="partNo")
+//-         //-             td
+//-         //-                 input#function(type="text", name="function")
+
+//-     when "Cap" 
+//-         //- table.table.table-dark.table-hover  
+//-         //-     thead   
+//-         //-         tr 
+//-         //-             th(scope = "col" style="width:5%") No 
+//-         //-             th(scope = "col") Part No
+                    
+//-         //-     tbody
+//-         //-             each compo,index in component
+//-         //-                 tr 
+//-         //-                     th(scope = "row")= index+1
+//-         //-                     td= compo.partNo
+
+//-         //-     tbody
+//-         //-         tr 
+//-         //-             form.form.addcap
+//-         //-                 td
+//-         //-                     button.btn.btn-danger Add
+//-         //-                 td 
+//-         //-                     input#partNo(type="text", name="partNo")
+        
+//-     when "Joint" 
+//-         //- table.table.table-dark.table-hover  
+//-         //-     thead   
+//-         //-         tr 
+//-         //-             th(scope = "col" style="width:5%") No 
+//-         //-             th(scope = "col") Part No
+//-         //-             th(scope = "col") Type
+                    
+//-         //-     tbody
+//-         //-             each compo,index in component
+//-         //-                 tr 
+//-         //-                     th(scope = "row")= index+1
+//-         //-                     td= compo.partNo
+//-         //-                     td= compo.type
+
+//-         //-     tbody
+//-         //-         tr 
+//-         //-             form.form.addjoint
+//-         //-                 td
+//-         //-                     button.btn.btn-danger Add
+//-         //-                 td 
+//-         //-                     input#partNo(type="text", name="partNo")
+//-         //-                 td 
+//-         //-                     input#type(type="text", name="type")
+
+
+//-     default
+//-         //- table.table.table-dark.table-hover  
+//-         //-     thead   
+//-         //-         tr 
+//-         //-             th(scope = "col" style="width:5%") No 
+//-         //-             th(scope = "col") Part No
+//-         //-             th(scope = "col") Side
+//-         //-             th(scope = "col") Length
+                    
+//-         //-     tbody
+//-         //-             each compo,index in component
+//-         //-                 tr 
+//-         //-                     th(scope = "row")= index+1
+//-         //-                     td= compo.partNo
+//-         //-                     td= compo.side 
+
+//-         //-     tbody
+//-         //-         tr 
+//-         //-             form.form.addnewcompo
+//-         //-                 td
+//-         //-                     button.btn.btn-danger Add
+//-         //-                 td 
+//-         //-                     input#partNo(type="text", name="partNo")
+//-         //-                 td
+//-         //-                     input#side(type="text", name="side")
+//-         //-                 td
+//-         //-                     input#length(type="text", name="length")
 
 
     //- "Inner Fin Tube","Outer Fin","Side Plate","Plate Header","Tank Header","Separator","Cap","Cup Plate","Joint"
