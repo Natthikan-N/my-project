@@ -15,7 +15,7 @@ exports.getAllCore = async (req, res, next) => {
   try {
     const cores = await Cores.find();
 
-    res.status(200).render("cores", {
+    res.status(200).render("coreDetail", {
       title: "Cores",
       cores: cores,
     });
@@ -47,11 +47,25 @@ exports.getCore = async (req, res, next) => {
 
 exports.createCore = async (req, res, next) => {
   try {
-    // const core = await Cores.findOne({ slug: req.params.slug });
+    const innerfintube = await InnerFinTubes.find();
+    const outerfin = await OuterFins.find();
+    const sideplate = await SidePlates.find();
+    const plateheader = await PlateHeader.find();
+    const tankheader = await TankHeader.find();
+    const cupplate = await CupPlates.find();
+    const joint = await Joint.find();
+    const cap = await Cap.find();
 
     res.status(200).render("createCore", {
       title: `Create Core`,
-      //   core,
+      innerfintube,
+      outerfin,
+      sideplate,
+      plateheader,
+      tankheader,
+      cupplate,
+      joint,
+      cap,
     });
   } catch {
     res.status(404).json({
@@ -64,11 +78,80 @@ exports.createCore = async (req, res, next) => {
 
 exports.homepage = async (req, res, next) => {
   try {
-    // const core = await Cores.findOne({ slug: req.params.slug });
+    const cores = await Cores.find();
+    // const core = await Cores.findOne();
 
     res.status(200).render("home", {
       title: `Home`,
-      //   core,
+      cores,
+      // core,
+    });
+  } catch {
+    res.status(404).json({
+      status: "fail",
+      message: "page not found",
+    });
+  }
+  next();
+};
+
+exports.qpointlist = async (req, res, next) => {
+  try {
+    const cores = await Cores.find();
+
+    res.status(200).render("qPointList", {
+      title: `Q-Point List`,
+      cores,
+    });
+  } catch {
+    res.status(404).json({
+      status: "fail",
+      message: "page not found",
+    });
+  }
+  next();
+};
+
+exports.updateqpointlist = async (req, res, next) => {
+  try {
+    const core = await Cores.findById(req.params.id);
+
+    res.status(200).render("updateQPoint", {
+      title: `update q-point list`,
+      core,
+    });
+  } catch {
+    res.status(404).json({
+      status: "fail",
+      message: "page not found",
+    });
+  }
+  next();
+};
+
+exports.updatecore = async (req, res, next) => {
+  try {
+    const core = await Cores.findById(req.params.id);
+    const innerfintube = await InnerFinTubes.find();
+    const outerfin = await OuterFins.find();
+    const sideplate = await SidePlates.find();
+    const plateheader = await PlateHeader.find();
+    const tankheader = await TankHeader.find();
+    const cupplate = await CupPlates.find();
+    const joint = await Joint.find();
+    const cap = await Cap.find();
+
+    res.status(200).render("updateCore", {
+      title: `Create Core`,
+      core,
+      innerfintube,
+      outerfin,
+      sideplate,
+      plateheader,
+      tankheader,
+      cupplate,
+      joint,
+      cap,
     });
   } catch {
     res.status(404).json({

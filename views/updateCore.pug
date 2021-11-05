@@ -1,0 +1,82 @@
+extends base
+include _componentCoreUpdate
+
+block append head
+
+block content
+
+    .create-core 
+        form.updateCoreform
+            .create-core__properties    
+                h3.create-core__h3 Core Evaporator Properties
+                .create-core__properties-form 
+                    ul.create-core__properties-list
+                        +coreProperties("partnoinput","partnoinput","text","","Core Part No. :","partNo",core.partNo,disabled)
+                        +coreProperties("modelname","modelname","text","","Model Name:","model",core.model)
+                        +coreProperties("width","width","text","","Width:","coreWidth",core.coreProperties.coreWidth)
+                        +coreProperties("height","height","text","","Height:","coreHeight",core.coreProperties.coreHeight)
+                        +coreProperties("area","area","text","","Area:","coreArea",core.coreProperties.coreArea)
+                        //- +coreProperties("qrcode","qrcode","text","","QR Code:","qrCode")
+                        //- +coreProperties("kanban","kanban","text","","Kanban color picture:","kanbanColor")
+                        li.create-core__properties-item
+                            label.create-core__properties-label(for="") core photo :
+                            input.create-core__properties-input-file(type="file" ,id=`coreImg`, accept="image/*" )
+
+            .create-core__component
+                h3.create-core__h3 Core Evaporator Component
+                .create-core__component-form
+                    ul.create-core__component-list
+                        +componentPartCoreUpdate("Inner Fin Tube Part no.:","innerfintubelist","","innerfintubes","",innerfintube,core.innerfintubes)
+                        +componentPartCoreUpdate("Outer Fin Part no.:","outerfinlist","","outerfins","",outerfin,core.outerfins)
+                        +componentPartCoreUpdate("Side plate Part no.:","sideplatetoplist","sideplatebuttomlist","sideplates_top","sideplates_buttom",sideplate,core.sideplates.parts[0].detail.partNo,core.sideplates.parts[1].detail.partNo)
+                        +componentPartCoreUpdate("Plate Header Part no.:","plateheadertoplist","plateheaderbuttomlist","plateheaders_top","plateheaders_buttom",plateheader,core.plateheaders.parts[0].detail.partNo,core.plateheaders.parts[1].detail.partNo)
+                        +componentPartCoreUpdate("Tank Header Part no.:","tankheadertoplist","tankheaderbuttomlist","tankheaders_top","tankheaders_buttom",tankheader,core.tankheaders.parts[0].detail.partNo,core.tankheaders.parts[1].detail.partNo)           
+                        +componentPartCoreUpdate("Cup plate Part no.:","cupplatelowerlist","cupplateupperlist","cupplates_lower","cupplates_upper",cupplate,core.cupplates.parts[0].detail.partNo,core.cupplates.parts[1].detail.partNo) 
+                        li.create-core__component-item
+                            label.create-core__component-label(for="") Separator Part no.:
+                            ul.create-core__component-combind-list
+                                //- +separatorSelect("TG447684-1100","1100","text","Amount")
+                                each sep in core.separators.parts
+                                    case sep.detail.partNo 
+                                        when "TG47684-1090" 
+                                            if sep.amount !==""
+                                                +separatorSelect("TG447684-1090","1090","text","Amount",sep.amount) 
+                                            else 
+                                                +separatorSelect("TG447684-1090","1090","text","Amount","")
+                                        when "TG47684-1100" 
+                                            if sep.amount !==""
+                                                +separatorSelect("TG447684-1100","1100","text","Amount",sep.amount)
+                                            else 
+                                                +separatorSelect("TG447684-1100","1100","text","Amount","")
+                                        when "TG47684-1110" 
+                                            if sep.amount !==""
+                                                +separatorSelect("TG447684-1110","1110","text","Amount",sep.amount)
+                                            else 
+                                                +separatorSelect("TG447684-1110","1110","text","Amount","")
+                                        when "TG47684-1120" 
+                                            if sep.amount !==""
+                                                +separatorSelect("TG447684-1120","1120","text","Amount",sep.amount)
+                                            else 
+                                                +separatorSelect("TG447684-1120","1120","text","Amount","")
+                                        when "TG47684-1130" 
+                                            if sep.amount !==""
+                                                +separatorSelect("TG447684-1130","1130","text","Amount",sep.amount)
+                                            else 
+                                                +separatorSelect("TG447684-1130","1130","text","Amount","")
+                                        when "TG47684-1140" 
+                                            if sep.amount !==""
+                                                +separatorSelect("TG447684-1140","1140","text","Amount",sep.amount)
+                                            else 
+                                                +separatorSelect("TG447684-1140","1140","text","Amount","")
+                                        when "TG47684-1150" 
+                                            if sep.amount !==""
+                                                +separatorSelect("TG447684-1150","1150","text","Amount",sep.amount)
+                                            else 
+                                                +separatorSelect("TG447684-1150","1150","text","Amount","")
+
+                        +componentPartCoreUpdate("Joint Part no.:","jointlist","","joint","",joint,core.joint)
+                        +componentPartCoreUpdate("Cap Part no.:","caplist","","cap","",cap,core.cap)
+            .create-core__component-item-button
+                button.create-core__btn UPDATE
+                    //- svg.create-core__btn-icon
+                    //-     use(xlink:href="img/Icon/symbol-defs.svg#icon-search")

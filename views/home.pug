@@ -5,24 +5,29 @@ block content
 
     .content 
         nav.sidebar     
-            form.sidebar-form(action="")
-                input.sidebar-form__search-input(type="text" placeholder="SEARCH CORE") 
-                button.sidebar-form__search-button 
+            form.sidebar-form
+                input.sidebar-form__search-input#searchText(type="text" placeholder="SEARCH CORE" autofocus) 
+                button.sidebar-form__search-button#searchCore 
                     svg.sidebar-form__search-icon   
                         use(xlink:href="img/Icon/symbol-defs.svg#icon-magnifying-glass")
-            .sidebar-content 
-                ul.side-nav     
-                    li.side-nav__item
-                        a.side-nav__link(href="#")
-                            span TG445566-8888 
+            .sidebar-content
+                
+                    ul.side-nav
+                        each acore in cores     
+                            li.side-nav__item.core-list(value=`${acore.partNo}`)
+                                //- span= acore.partNo
+                                a.side-nav__link#core-list(href=`#${acore._id}` ,value=`${acore._id}`)
+                                    span= acore.partNo
 
-        main.qpoint-view    
+        main.qpoint-view  
+
+            //- p= core  
             .qpoint-heading 
                 h1.qpoint-heading__head
-                    span.qpoint-heading__part-no TG445566-7777
+                    span.qpoint-heading__part-no#qpoint-part-no= cores[0].partNo
                     span.qpoint-heading__pipe  | 
-                    span.qpoint-heading__model T99N
+                    span.qpoint-heading__model#qpoint-model= cores[0].model 
 
             .qpoint-viewer 
-                .qpoint-viewer__card
-                    img(src="img/Q-point/CR.jpg", alt="qpoint" class="qpoint-viewer__img")
+                .qpoint-viewer__card#qpoint-render
+                    img(src=`${cores[0].qpoint.img}`, alt="qpoint" class="qpoint-viewer__img")

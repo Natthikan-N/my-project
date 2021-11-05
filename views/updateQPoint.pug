@@ -1,0 +1,23 @@
+extends base
+block append head
+
+block content
+    .update-qpoint 
+        h1.update-qpoint__head Update Q-Point
+        form.update-qpoint__form
+            .update-qpoint__block
+                ul.update-qpoint__list
+                    li.update-qpoint__item
+                        label.update-qpoint__label-text Issue No. : 
+                        input.update-qpoint__input-text(type="text" ,id="q-issue",name="issue",value=`${core.qpoint.issue}` )
+                    li.update-qpoint__item
+                        label.update-qpoint__label-select Part no: 
+                        input.update-qpoint__input-text(type="text" ,id="q-partNo",name="partNo" ,value=`${core.partNo}`)
+                        //- select.update-qpoint__select(name="partNo" , id="q-partNo")
+                            //- each core in cores
+                                //- option= core.partNo
+                    li.update-qpoint__item
+                        label.update-qpoint__label-file Input Image: 
+                        input.update-qpoint__input-file(type="file" ,id=`qpoint-file`, accept="image/*") 
+                    li.update-qpoint__item
+                        button.update-qpoint__btn upload qpoint

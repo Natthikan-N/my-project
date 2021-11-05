@@ -1,23 +1,109 @@
 mixin component(component)
-    
-        .card.mb-3.box-card(style="max-width: 2000px")
-                .row.g-0.component-card 
-                    .row.g-0 
-                        .col-md-5
+    -var route = component.name.toLowerCase().split(" ").join("")
+    -var compoName = ["Separator","Side Plate","Plate Header","Tank Header","Cup Plate"]
+    -var compoNameSingle = ["Inner Fin Tube","Outer Fin","Cap","Joint"]
+                        
+    each compo in compoName
+        if(component.name == compo)
+                    .product__part-card
+                        .product__part-card-head
+                            h1.product__part-card-head-h1= component.name
 
-                        .col-md-7 
-                            .card-body
-                                        h5.card-title 
-                                            strong= component.name
-                                        -var route = component.name.toLowerCase().split(" ").join("")
+                        each part in component.parts
+                            a.product__part-card-link(href=`/${route}/${part.detail._id}`)
+                                .product__part-card-properties 
+                                    ul.product__part-card-properties-list 
+                                        li.product__part-card-properties-item
+                                            img.product__part-card-properties-img(src= part.detail.img, alt="")
+                                        li.product__part-card-properties-item
+                                            case compo
+                                                when "Separator"
+                                                    ul.product__part-card-properties-detail-list
+                                                        li.product__part-card-properties-detail-item part no. :
+                                                            span= part.detail.partNo
+                                                        li.product__part-card-properties-detail-item function : 
+                                                            span= part.detail.function
+                                                        li.product__part-card-properties-detail-item amount : 
+                                                            span= part.amount
+                                                default
+                                                    ul.product__part-card-properties-detail-list
+                                                        li.product__part-card-properties-detail-item part no. :
+                                                            span= part.detail.partNo
+                                                        li.product__part-card-properties-detail-item side : 
+                                                            span= part.detail.side
+                                                        li.product__part-card-properties-detail-item amount : 
+                                                            span= part.amount
+    each compo in compoNameSingle        
+        if(component.name == compo)
+                    .product__part-card
+                        .product__part-card-head
+                            h1.product__part-card-head-h1= component.name
+                        a.product__part-card-link(href=`/${route}/${component.detail._id}`)
+                            .product__part-card-properties 
+                                ul.product__part-card-properties-list 
+                                    li.product__part-card-properties-item
+                                        img.product__part-card-properties-img(src= component.detail.img, alt="")
+                                    li.product__part-card-properties-item
+                                        case compo
+                                            when "Inner Fin Tube"
+                                                ul.product__part-card-properties-detail-list
+                                                    li.product__part-card-properties-detail-item part no. :
+                                                        span= component.detail.partNo
+                                                    li.product__part-card-properties-detail-item amount : 
+                                                        span= component.amount
+                                            when "Outer Fin"
+                                                ul.product__part-card-properties-detail-list
+                                                    li.product__part-card-properties-detail-item part no. :
+                                                        span= component.detail.partNo
+                                                    li.product__part-card-properties-detail-item amount : 
+                                                        span= component.amount
+                                                    li.product__part-card-properties-detail-item fin pitch : 
+                                                        span= component.detail.pitch
+                                                    li.product__part-card-properties-detail-item fin wave : 
+                                                        span= component.detail.wave
+                                                    li.product__part-card-properties-detail-item fin slit : 
+                                                        span= component.detail.slit 
+                                                    li.product__part-card-properties-detail-item fin length : 
+                                                        span= component.detail.length
+                                            when "Cap"
+                                                ul.product__part-card-properties-detail-list
+                                                    li.product__part-card-properties-detail-item part no. :
+                                                        span= component.detail.partNo
+                                                    li.product__part-card-properties-detail-item amount : 
+                                                        span= component.amount
+                                            when "Joint"
+                                                ul.product__part-card-properties-detail-list
+                                                    li.product__part-card-properties-detail-item part no. :
+                                                        span= component.detail.partNo
+                                                    li.product__part-card-properties-detail-item amount : 
+                                                        span= component.detail.type
+                                                    
+
+
+
+
+
+
+
+    
+        //- .card.mb-3.box-card(style="max-width: 2000px")
+        //-         .row.g-0.component-card 
+        //-             .row.g-0 
+        //-                 .col-md-5
+
+        //-                 .col-md-7 
+        //-                     .card-body
+        //-                                 h5.card-title 
+        //-                                     strong= component.name
+        //-                                 -var route = component.name.toLowerCase().split(" ").join("")
 
                     
 
-                    .row.g-0
+        //-             .row.g-0
                         
-                        -var compoName = ["Separator","Side Plate","Plate Header","Tank Header","Cup Plate"]
-                        each compo in compoName
-                            if(component.name == compo)
+                        //- -var compoName = ["Separator","Side Plate","Plate Header","Tank Header","Cup Plate"]
+                        //- each compo in compoName
+                        //-     if(component.name == compo)
                                 each part in component.parts 
                                     .row.g-0
                                         .col-md-5

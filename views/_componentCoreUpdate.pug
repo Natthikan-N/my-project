@@ -1,0 +1,38 @@
+mixin componentPartCoreUpdate(label,idpart_1,idpart_2,name1,name2,component,currentpart1,currentpart2)
+    if(idpart_2=="" )
+        if(name1=="joint"||name1=="cap")
+            li.create-core__component-item
+                label.create-core__component-label(for="") #{label}
+                select.create-core__component-select(id=`${idpart_1}`,name=`${name1}_detail`)
+                    option= currentpart1.detail.partNo
+                    each compo in component
+                        option= compo.partNo 
+        if(name1=="innerfintubes"||name1=="outerfins")
+            li.create-core__component-item
+                label.create-core__component-label(for=`${id}`) #{label}
+                select.create-core__component-select(id=`${idpart_1}`,name=`${name1}_detail`)
+                    option= currentpart1.detail.partNo
+                    each compo in component
+                        option= compo.partNo
+                input.create-core__component-input-text(id=`${name1}qty`,type=`text`, placeholder=`Amount` ,name=`${name1}_qty`,value=`${currentpart1.amount}`)
+                
+    if(idpart_2 !="")
+        li.create-core__component-item
+            label.create-core__component-label(for="") #{label}
+            select.create-core__component-select(id=`${idpart_1}`,name=`${name1}`)
+                option= currentpart1
+                each compo in component
+                    option= compo.partNo
+            select.create-core__component-select(id=`${idpart_2}`,name=`${name2}`)
+                option= currentpart2
+                each compo in component
+                    option= compo.partNo
+mixin separatorSelect(label,id,type,placeholder,currentAmount)
+    li.create-core__component-combind-item
+        label.create-core__component-combind-label(for="" )  #{label}
+        input.create-core__component-combind-input-text(id=`${id}qty`,type=`${type}`, placeholder=`${placeholder}`, name=`separators_${id}`, value=`${currentAmount}`)
+
+mixin coreProperties(labelfor,id,type,placeholder,text,name,currentValue,disable)
+    li.create-core__properties-item
+        label.create-core__properties-label(for=`${labelfor}`) #{text}
+        input.create-core__properties-input-text(type=`${type}` ,id=`${id}`,name=`${name}`,value=`${currentValue}`, disable)

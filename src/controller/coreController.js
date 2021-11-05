@@ -45,17 +45,39 @@ const upload = multer({
 
 exports.uploadCoreImage = upload.single("img");
 
+const multerStorageQpoint = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "publish/img/Q-point");
+  },
+  filename: (req, file, cb) => {
+    const ext = file.mimetype.split("/")[1];
+    cb(null, `Q-Point-${Date.now()}.${ext}`);
+  },
+});
+
+const uploadQpoint = multer({
+  storage: multerStorageQpoint,
+  fileFilter: multerFilter,
+});
+
+exports.uploadQpointImage = uploadQpoint.single("qpoint");
+
 //this is not work yet
 exports.resizeUserPhoto = async (req, res, next) => {
+  console.log(req.body);
+  console.log(req.file);
+
   if (!req.file) return next();
 
   req.file.filename = `picture-${Date.now()}.jpeg`;
 
   await sharp(req.file.buffer)
-    .resize(500, 500)
+    .resize(1000, 1000)
     .toFormat("jpeg")
     .jpeg({ quality: 90 })
-    .toFile(`/publish/img/Cores/${req.file.filename}`);
+    .toFile(`/img/Cores/${req.file.filename}`);
+
+  console.log(req.file);
 
   next();
 };
@@ -75,8 +97,12 @@ exports.getCupPlateId = getPartIdmiddleware.getCouplePartId(Cupplate);
 //Get Small part id
 exports.getSeparatorId = getPartIdmiddleware.getSmallPartId(Separator);
 
+//Get Core id
+exports.getCoreId = getPartIdmiddleware.getSinglePartId(Core);
+exports.getCoreIdId = getPartIdmiddleware.getCoreId(Core);
+
 const reStructure = (ojb) => {
-  console.log(ojb);
+  // console.log(ojb);
   const core = {
     model: ojb.model,
     partNo: ojb.partNo,
@@ -166,11 +192,72 @@ exports.createCore = async (req, res) => {
       data: { model },
     });
   } catch {
-    const model = await Core.create(req.body);
     res.status(404).json({
       status: "fail",
       message: "page not found",
       data: { model },
+    });
+  }
+};
+
+exports.updateCoreAPI = async (req, res) => {
+  try {
+    console.log("hello from controller");
+    console.log(req.body);
+    // req.id = req.partNo;
+    // console.log(req.body);
+    const newCore = reStructure(req.body);
+    console.log(newCore);
+    // Object.assign(newCore, { img: `/img/Cores/${req.file.filename}` });
+    if (req.file)
+      Object.assign(newCore, { img: `/img/Cores/${req.file.filename}` });
+
+    const core = await Core.findByIdAndUpdate(req.body.id, newCore);
+
+    res.status(200).json({
+      status: "success",
+      data: { core },
+    });
+  } catch {
+    res.status(404).json({
+      status: "fail",
+      message: "page not found",
+      data: { model },
+    });
+  }
+};
+
+const reStructureQpoint = (ojb) => {
+  return {
+    id: ojb.partNo,
+    qpoint: {
+      qpoint: {
+        issue: ojb.issue,
+        img: ojb.img,
+      },
+    },
+  };
+};
+
+exports.updateQPoint = async (req, res) => {
+  try {
+    if (req.file)
+      Object.assign(req.body, { img: `/img/Q-Point/${req.file.filename}` });
+    const newQPoint = reStructureQpoint(req.body);
+
+    const core = await Core.findByIdAndUpdate(newQPoint.id, newQPoint.qpoint, {
+      new: true,
+      runValidators: true,
+    });
+
+    res.status(200).json({
+      status: "success",
+      data: core,
+    });
+  } catch {
+    res.status(404).json({
+      status: "fail",
+      message: "page not found",
     });
   }
 };

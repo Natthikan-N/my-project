@@ -1,10 +1,10 @@
 exports.getSinglePartId = (Part) => async (req, res, next) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     const part = await Part.find();
 
     Object.keys(req.body).forEach((el) => {
-      console.log(req.body[el]);
+      // console.log(req.body[el]);
 
       part.map((val) => {
         if (val.partNo == req.body[el]) {
@@ -15,7 +15,7 @@ exports.getSinglePartId = (Part) => async (req, res, next) => {
     // res.status(200).json({
     //   status: "success",
     //   //   results: part.length,
-    //   data: { part },
+    //   // data: { part },
     // });
   } catch {
     res.status(404).json({
@@ -41,16 +41,16 @@ exports.getCouplePartId = (Part) => async (req, res, next) => {
       });
     });
 
-    console.log(partKeyArr);
-    console.log(partIdArr);
+    // console.log(partKeyArr);
+    // console.log(partIdArr);
 
     partIdArr.map((el, i) => {
       req.body[partKeyArr[i]] = el;
     });
     // res.status(200).json({
     //   status: "success",
-    //   //   results: part.length,
-    //   data: { part },
+    //   results: part.length,
+    // data: { part },
     // });
   } catch {
     res.status(404).json({
@@ -86,6 +86,34 @@ exports.getSmallPartId = (Part) => async (req, res, next) => {
     //   status: "success",
     //   //   results: part.length,
     //   data: { part },
+    // });
+  } catch {
+    res.status(404).json({
+      status: "fail",
+      message: "page not found",
+    });
+  }
+  next();
+};
+
+exports.getCoreId = (Part) => async (req, res, next) => {
+  try {
+    // console.log(req.body);
+    const part = await Part.find();
+
+    Object.keys(req.body).forEach((el) => {
+      // console.log(req.body[el]);
+
+      part.map((val) => {
+        if (val.partNo == req.body[el]) {
+          req.body.id = val._id;
+        }
+      });
+    });
+    // res.status(200).json({
+    //   status: "success",
+    //   //   results: part.length,
+    //   // data: { part },
     // });
   } catch {
     res.status(404).json({

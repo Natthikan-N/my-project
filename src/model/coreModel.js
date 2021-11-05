@@ -98,8 +98,12 @@ const coreSchema = new mongoose.Schema({
     },
   }, //properties
 
-  img: String,
+  img: { type: String, default: "/img/Cores/default.jpg" },
   slug: String,
+  qpoint: {
+    img: { type: String, default: "/img/Q-point/default.jpg" },
+    issue: { type: String, default: "" },
+  },
 });
 
 // coreSchema.pre('save',function(next){

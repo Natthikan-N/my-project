@@ -5,38 +5,73 @@ include _component
 block append head
 
 block content
+    .product__core-card
+        .product__core-card-head 
+            h1.product__core-card-head-h1 model : 
+                span= core.model 
+            h1.product__core-card-head-h1 part no : 
+                span=core.partNo
+        .product__core-card-properties 
+            ul.product__core-card-properties-list 
+                li.product__core-card-properties-item
+                    img.product__core-card-properties-img(src=`${core.img}`, alt="img")
+                li.product__core-card-properties-item
+                    ul.product__core-card-properties-detail-list
+                        li.product__core-card-properties-detail-item core width : 
+                            span= core.coreProperties.coreWidth
+                        li.product__core-card-properties-detail-item core height : 
+                            span= core.coreProperties.coreHeight
+                        li.product__core-card-properties-detail-item core surface area : 
+                            span= core.coreProperties.coreArea
+                        //- li.product__core-card-properties-detail-item qr code :
+                        //- li.product__core-card-properties-detail-item kanban :
+    +component(core.innerfintubes)
+    +component(core.outerfins)
+    +component(core.sideplates)
+    +component(core.cupplates)
+    +component(core.plateheaders)
+    +component(core.tankheaders)
+    +component(core.separators)
+    +component(core.cap)
+    +component(core.joint)
     
-    main.container-body(style="padding : 20px;")
-        section
-            h2 Model properties : 
-            .box 
-                h3 Model :
-                    strong= core.model
-                h3 Core Part No : 
-                    strong=core.partNo
+    
+                   
+
+
+
+
+    //- main.container-body(style="padding : 20px;")
+    //-     section
+    //-         h2 Model properties : 
+    //-         .box 
+    //-             h3 Model :
+    //-                 strong= core.model
+    //-             h3 Core Part No : 
+    //-                 strong=core.partNo
                     
-                .row.g-0 
-                    .col-4.column                         
-                        img.mx-auto.d-block.picProp(src= core.img alt="product")
-                    .col-4.column Core Matrix chart
-                    .col-4.column
-                        ul
-                            li Core Width : 239.5
-                            li Core Height :231 
-                            li Core surface area : 2.61
-                            li QR-Code Core : 
-                                br
-                                img(src="..." alt="QR-code")
-                            li Kanban Color : 
-                                br
-                                img(src="..." alt="kanban")
-                        a.btn.btn-info(href="#") Technical information
-                        a.btn.btn-info(href="#") Tooling
-        hr
+    //-             .row.g-0 
+    //-                 .col-4.column                         
+    //-                     img.mx-auto.d-block.picProp(src= core.img alt="product")
+    //-                 .col-4.column Core Matrix chart
+    //-                 .col-4.column
+    //-                     ul
+    //-                         li Core Width : 239.5
+    //-                         li Core Height :231 
+    //-                         li Core surface area : 2.61
+    //-                         li QR-Code Core : 
+    //-                             br
+    //-                             img(src="..." alt="QR-code")
+    //-                         li Kanban Color : 
+    //-                             br
+    //-                             img(src="..." alt="kanban")
+    //-                     a.btn.btn-info(href="#") Technical information
+    //-                     a.btn.btn-info(href="#") Tooling
+    //-     hr
     
-        secton 
-            h2  Component Part :
-            div 
+    //-     secton 
+    //-         h2  Component Part :
+    //-         div 
                 +component(core.innerfintubes)
                 +component(core.outerfins)
                 +component(core.sideplates)

@@ -36,4 +36,10 @@ router.route("/joint/:id").get(viewController.getJoint);
 
 router.route("/createcore").get(viewController.createCore);
 router.route("/").get(viewController.homepage);
+
+router.route("/qpointlist").get(viewController.qpointlist);
+router.route("/updateqpoint/:id").get(viewController.updateqpointlist);
+
+router.route("/updatecore/:id").get(viewController.updatecore);
+
 module.exports = router;

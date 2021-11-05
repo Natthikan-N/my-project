@@ -53,6 +53,33 @@
 
   ////////////////table view////////////////
 
+  &__add-component-icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-gray-light-1;
+  }
+
+  &__edit-component-icon,
+  &__delete-component-icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-gray-light-1;
+  }
+
+  &__list-edit {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item-edit {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
   &__view {
     background-color: $color-gray-dark;
     padding: 3rem;
@@ -86,9 +113,16 @@
       width: auto;
     }
 
+    &-edit {
+      width: 10%;
+      // display: flex;
+      // justify-content: space-around;
+    }
+
     &-no,
     &-partno,
-    &-prob-1 {
+    &-prob-1,
+    &-edit {
       color: $color-white;
       font-weight: bold;
       font-size: 1.5rem;
@@ -105,6 +139,34 @@
     background-color: $color-white;
     border-style: none;
     box-shadow: $color-shadow-btn;
+  }
+
+  &__btn-edit {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 10rem;
+    background-color: $color-white;
+    border-style: none;
+    box-shadow: $color-shadow-btn;
+    flex: 0 0 50%;
+  }
+
+  &__btn-edit:hover {
+    background-color: $color-yello-1;
+  }
+
+  &__btn-delete {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 10rem;
+    background-color: $color-white;
+    border-style: none;
+    box-shadow: $color-shadow-btn;
+    flex: 0 0 50%;
+  }
+
+  &__btn-delete:hover {
+    background-color: $color-red-light;
   }
 
   &__input {

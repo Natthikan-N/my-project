@@ -14,13 +14,25 @@ case component[0].partName
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo 
                         td.component-part__table-item-prob-1= compo.length
+                        td.component-part__table-header-edit 
+                            ul.component-part__list-edit 
+                                li.component-part__item-edit  
+                                    a.component-part__link-edit(href="#")  
+                                        button.component-part__btn-edit
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
+                                li.component-part__item-edit  
+                                    a.component-part__link 
+                                        button.component-part__btn-delete
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-cross")
             tbody.component-part__table-body
                 form.addnewinnnerfintube 
                     tr.component-part__table-row
                         td.component-part__table-item
                             a.component-part__link 
                                 button.component-part__btn-add
-                                    svg.sidebar-form__search-icon   
+                                    svg.component-part__add-component-icon
                                         use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
                         td.component-part__table-item
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
@@ -46,13 +58,25 @@ case component[0].partName
                         td.component-part__table-item-prob-1= compo.pitch
                         td.component-part__table-item-prob-1= compo.wave
                         td.component-part__table-item-prob-1= compo.slit
+                        td.component-part__table-header-edit 
+                            ul.component-part__list-edit 
+                                li.component-part__item-edit  
+                                    a.component-part__link-edit(href="#")  
+                                        button.component-part__btn-edit
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
+                                li.component-part__item-edit  
+                                    a.component-part__link 
+                                        button.component-part__btn-delete
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-cross")
             tbody.component-part__table-body
                 form.addnewouterfin
                     tr.component-part__table-row
                         td.component-part__table-item
                             a.component-part__link 
                                 button.component-part__btn-add
-                                    svg.sidebar-form__search-icon   
+                                    svg.component-part__add-component-icon
                                         use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
                         td.component-part__table-item
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
@@ -71,20 +95,32 @@ case component[0].partName
                 tr.component-part__table-row
                     th.component-part__table-header-no No
                     th.component-part__table-header-partno Part No
-                    th.component-part__table-header-prob-1 Side 
+                    th.component-part__table-header-prob-1 Side
             tbody.component-part__table-body 
                 each compo,index in component 
                     tr.component-part__table-row 
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo 
-                        td.component-part__table-item-prob-1= compo.side 
+                        td.component-part__table-item-prob-1= compo.side
+                        td.component-part__table-header-edit 
+                            ul.component-part__list-edit 
+                                li.component-part__item-edit  
+                                    a.component-part__link-edit(href="#")  
+                                        button.component-part__btn-edit
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
+                                li.component-part__item-edit  
+                                    a.component-part__link 
+                                        button.component-part__btn-delete
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-cross")
             tbody.component-part__table-body
                 form.addnewcupplate
                     tr.component-part__table-row
                         td.component-part__table-item
                             a.component-part__link 
                                 button.component-part__btn-add
-                                    svg.sidebar-form__search-icon   
+                                    svg.component-part__add-component-icon
                                         use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
                         td.component-part__table-item
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
@@ -97,20 +133,32 @@ case component[0].partName
                 tr.component-part__table-row
                     th.component-part__table-header-no No
                     th.component-part__table-header-partno Part No
-                    th.component-part__table-header-prob-1 Function 
+                    th.component-part__table-header-prob-1 Function
             tbody.component-part__table-body 
                 each compo,index in component 
                     tr.component-part__table-row 
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo 
                         td.component-part__table-item-prob-1= compo.func
+                        td.component-part__table-header-edit 
+                            ul.component-part__list-edit 
+                                li.component-part__item-edit  
+                                    a.component-part__link-edit(href="#")  
+                                        button.component-part__btn-edit
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
+                                li.component-part__item-edit  
+                                    a.component-part__link 
+                                        button.component-part__btn-delete
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-cross")
             tbody.component-part__table-body
                 form.addseparator
                     tr.component-part__table-row
                         td.component-part__table-item
                             a.component-part__link 
                                 button.component-part__btn-add
-                                    svg.sidebar-form__search-icon   
+                                    svg.component-part__add-component-icon
                                         use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
                         td.component-part__table-item
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
@@ -127,13 +175,25 @@ case component[0].partName
                     tr.component-part__table-row 
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo
+                        td.component-part__table-header-edit 
+                            ul.component-part__list-edit 
+                                li.component-part__item-edit  
+                                    a.component-part__link-edit(href="#")  
+                                        button.component-part__btn-edit
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
+                                li.component-part__item-edit  
+                                    a.component-part__link 
+                                        button.component-part__btn-delete
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-cross")
             tbody.component-part__table-body
                 form.addcap
                     tr.component-part__table-row
                         td.component-part__table-item
                             a.component-part__link 
                                 button.component-part__btn-add
-                                    svg.sidebar-form__search-icon   
+                                    svg.component-part__add-component-icon
                                         use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
                         td.component-part__table-item
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
@@ -143,20 +203,32 @@ case component[0].partName
                 tr.component-part__table-row
                     th.component-part__table-header-no No
                     th.component-part__table-header-partno Part No
-                    th.component-part__table-header-prob-1 Type 
+                    th.component-part__table-header-prob-1 Type
             tbody.component-part__table-body 
                 each compo,index in component 
                     tr.component-part__table-row 
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo 
                         td.component-part__table-item-prob-1= compo.type
+                        td.component-part__table-header-edit 
+                            ul.component-part__list-edit 
+                                li.component-part__item-edit  
+                                    a.component-part__link-edit(href="#")  
+                                        button.component-part__btn-edit
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
+                                li.component-part__item-edit  
+                                    a.component-part__link 
+                                        button.component-part__btn-delete
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-cross")
             tbody.component-part__table-body
                 form.addjoint
                     tr.component-part__table-row
                         td.component-part__table-item
                             a.component-part__link 
                                 button.component-part__btn-add
-                                    svg.sidebar-form__search-icon   
+                                    svg.component-part__add-component-icon
                                         use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
                         td.component-part__table-item
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
@@ -169,20 +241,33 @@ case component[0].partName
                     th.component-part__table-header-no No
                     th.component-part__table-header-partno Part No
                     th.component-part__table-header-prob-1 Side
-                    th.component-part__table-header-prob-1 Length 
+                    th.component-part__table-header-prob-1 Length
             tbody.component-part__table-body 
                 each compo,index in component 
                     tr.component-part__table-row 
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo 
                         td.component-part__table-item-prob-1= compo.side
+                        td.component-part__table-item-prob-1 Length
+                        td.component-part__table-header-edit 
+                            ul.component-part__list-edit 
+                                li.component-part__item-edit  
+                                    a.component-part__link-edit(href="#")  
+                                        button.component-part__btn-edit
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
+                                li.component-part__item-edit  
+                                    a.component-part__link 
+                                        button.component-part__btn-delete
+                                            svg.component-part__edit-component-icon
+                                                use(xlink:href="img/Icon/symbol-defs.svg#icon-cross")                
             tbody.component-part__table-body
                 form.addnewcompo
                     tr.component-part__table-row
                         td.component-part__table-item
                             a.component-part__link 
                                 button.component-part__btn-add
-                                    svg.sidebar-form__search-icon   
+                                    svg.component-part__add-component-icon
                                         use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
                         td.component-part__table-item
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")

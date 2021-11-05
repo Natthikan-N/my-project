@@ -1,42 +1,65 @@
-mixin componentPartSelect(label,idpart_1,idpart_2,name1,name2)
+mixin componentPartSelect(label,idpart_1,idpart_2,name1,name2,component)
     if(idpart_2=="" )
         if(name1=="joint"||name1=="cap")
-            .mb-3.row 
-                label.col-sm-3.col-form-label(for =`${id}`) #{label}
-                .col-sm-4
-                    select.form-select(id=`${idpart_1}`,name=`${name1}_detail`)
+            li.create-core__component-item
+                label.create-core__component-label(for="") #{label}
+                select.create-core__component-select(id=`${idpart_1}`,name=`${name1}_detail`)
+                    option SELECT PART NO.
+                    each compo in component
+                        option= compo.partNo 
+            //- .mb-3.row 
+            //-     label.col-sm-3.col-form-label(for =`${id}`) #{label}
+            //-     .col-sm-4
+            //-         select.form-select(id=`${idpart_1}`,name=`${name1}_detail`)
 
         if(name1=="innerfintubes"||name1=="outerfins")
-            .mb-3.row 
-                label.col-sm-3.col-form-label(for =`${id}`) #{label}
-                .col-sm-4
-                    select.form-select(id=`${idpart_1}`,name=`${name1}_detail`)
-                .col-sm-4
-                    input.form-control(id=`${name1}qty`,type=`text` placeholder=`Amount` name=`${name1}_qty`)
+            li.create-core__component-item
+                label.create-core__component-label(for=`${id}`) #{label}
+                select.create-core__component-select(id=`${idpart_1}`,name=`${name1}_detail`)
+                    option SELECT PART NO.
+                    each compo in component
+                        option= compo.partNo
+                input.create-core__component-input-text(id=`${name1}qty`,type=`text` placeholder=`Amount` name=`${name1}_qty`)
                 
-
     if(idpart_2 !="")
-        .mb-3.row 
-            label.col-sm-3.col-form-label() #{label}
-            
-            .col-sm-4
-                select.form-select(id=`${idpart_1}`,name=`${name1}`)
-            .col-sm-4
-                select.form-select(id=`${idpart_2}`,name=`${name2}`)
+        li.create-core__component-item
+            label.create-core__component-label(for="") #{label}
+            select.create-core__component-select(id=`${idpart_1}`,name=`${name1}`)
+                option SELECT PART NO.
+                each compo in component
+                    option= compo.partNo
+            select.create-core__component-select(id=`${idpart_2}`,name=`${name2}`)
+                option SELECT PART NO.
+                each compo in component
+                    option= compo.partNo
+        //- .mb-3.row 
+        //-     label.col-sm-3.col-form-label() #{label}
+        //-     .col-sm-4
+        //-         select.form-select(id=`${idpart_1}`,name=`${name1}`)
+        //-     .col-sm-4
+        //-         select.form-select(id=`${idpart_2}`,name=`${name2}`)
 
-mixin separatorSelect(labeltext,type_1,label_checkbox,id,type_2,placeholder)
-    .mb-3.row 
-        label.col-sm-3.col-form-label(for=`${id}`) #{labeltext}
-        .col-sm-4
-            .form-check     
-                input.form-check-input(id=`${id}`,type=`${type_1}`)
-                label.form-check-label(for=`${id}`) #{label_checkbox}
-        .col-sm-4
-            input.form-control(id=`${id}qty`,type=`${type_2}` placeholder=`${placeholder}` name=`separators_${id}`)
+mixin separatorSelect(label,id,type,placeholder)
+    li.create-core__component-combind-item
+        label.create-core__component-combind-label(for="" )  #{label}
+        input.create-core__component-combind-input-text(id=`${id}qty`,type=`${type}` placeholder=`${placeholder}` name=`separators_${id}`)
+
+    //- .mb-3.row 
+    //-     label.col-sm-3.col-form-label(for=`${id}`) #{labeltext}
+    //-     .col-sm-4
+    //-         .form-check     
+    //-             input.form-check-input(id=`${id}`,type=`${type_1}`)
+    //-             label.form-check-label(for=`${id}`) #{label_checkbox}
+    //-     .col-sm-4
+    //-         input.form-control(id=`${id}qty`,type=`${type_2}` placeholder=`${placeholder}` name=`separators_${id}`)
 
 
 mixin coreProperties(labelfor,id,type,placeholder,text,name)
-    .mb-3.row 
-        label.col-sm-3.col-form-label(for= `${labelfor}`) #{text}
-        .col-sm-5 
-            input.form-control(id=`${id}`, type=`${type}`, placeholder=`${placeholder}`, name=`${name}`)
+    li.create-core__properties-item
+        label.create-core__properties-label(for=`${labelfor}`) #{text}
+        input.create-core__properties-input-text(type=`${type}` ,id=`${id}`,name=`${name}` )
+
+    //- .mb-3.row 
+    //-     label.col-sm-3.col-form-label(for= `${labelfor}`) #{text}
+    //-     .col-sm-5 
+    //-         input.form-control(id=`${id}`, type=`${type}`, placeholder=`${placeholder}`, name=`${name}`)

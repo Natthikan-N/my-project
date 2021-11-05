@@ -1,18 +1,138 @@
-.box {
-  margin-top: 30px;
-  padding: 20px;
-  display: grid;
-  background-color: $color-red-dark;
-  border-radius: 10px;
-  box-shadow: 15px 15px 15px $color-black-dark;
-  font-size: 90%;
+@import "../abstracts/variables";
+.product__core-card {
+  margin: 3rem;
+  background-color: $color-gray-dark;
+  border-radius: 2rem;
+  padding: 2rem;
+  color: $color-white;
+  font-family: inherit;
+  box-shadow: $color-shadow;
+
+  // display: flex;
+
+  &-head {
+    display: flex;
+
+    border-bottom: 1px solid $color-white;
+
+    &-h1 {
+      padding: 1rem 3rem;
+      font-family: inherit;
+      flex: 0 0 40%;
+      text-transform: uppercase;
+    }
+  }
+
+  &-properties {
+    padding: 3rem;
+
+    &-list {
+      list-style: none;
+      display: flex;
+    }
+
+    &-item {
+      flex: 0 0 40%;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &-img {
+      max-width: 30rem;
+      max-height: 20rem;
+      border-radius: 1rem;
+      box-shadow: $color-shadow-btn;
+    }
+  }
 }
 
-.component-card {
-  background-color: $color-red-dark;
-}
-
-.card-title {
-  font-size: 105%;
+.product__part-card-link:link {
+  text-decoration: none;
+  font-family: inherit;
   color: $color-white;
 }
+
+.product__part-card {
+  margin: 3rem;
+  background-color: $color-gray-dark;
+  border-radius: 2rem;
+  padding: 2rem;
+  color: $color-white;
+  font-family: inherit;
+  box-shadow: $color-shadow;
+
+  // display: flex;
+
+  &-link:link {
+    text-decoration: none;
+  }
+
+  &-head {
+    display: flex;
+
+    border-bottom: 1px solid $color-white;
+
+    &-h1 {
+      padding: 1rem 3rem;
+      font-family: inherit;
+      flex: 0 0 40%;
+      text-transform: uppercase;
+    }
+  }
+
+  &-properties {
+    padding: 3rem;
+    margin: 2rem;
+    // background-color: $color-gray-light-2;
+
+    &-list {
+      list-style: none;
+      display: flex;
+    }
+
+    &-item {
+      flex: 0 0 40%;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &-detail-list:link {
+      text-decoration: none;
+
+      color: $color-white;
+    }
+
+    &-detail-item:link {
+      text-decoration: none;
+      color: $color-white;
+    }
+
+    &-img {
+      max-width: 30rem;
+      max-height: 20rem;
+      border-radius: 1rem;
+      box-shadow: $color-shadow-btn;
+    }
+  }
+}
+
+// .box {
+//   margin-top: 30px;
+//   padding: 20px;
+//   display: grid;
+//   background-color: $color-red-dark;
+//   border-radius: 10px;
+//   box-shadow: 15px 15px 15px $color-black-dark;
+//   font-size: 90%;
+// }
+
+// .component-card {
+//   background-color: $color-red-dark;
+// }
+
+// .card-title {
+//   font-size: 105%;
+//   color: $color-white;
+// }
