@@ -1,5 +1,3 @@
-//- include addComponent
-
 case component[0].partName
     when "Inner Fin Tube" 
         table.component-part__table
@@ -8,16 +6,19 @@ case component[0].partName
                     th.component-part__table-header-no No
                     th.component-part__table-header-partno Part No
                     th.component-part__table-header-prob-1 Length
+                    th.component-part__table-header-img Picture
             tbody.component-part__table-body 
                 each compo,index in component 
                     tr.component-part__table-row 
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo 
                         td.component-part__table-item-prob-1= compo.length
+                        td.component-part__table-item-img
+                            img.component-part__table-item-img-img(src=`${compo.img}`, alt=`${compo.partName}`)
                         td.component-part__table-header-edit 
                             ul.component-part__list-edit 
                                 li.component-part__item-edit  
-                                    a.component-part__link-edit(href="#")  
+                                    a.component-part__link-edit(href=`/innerfintube/update/${compo._id}`)  
                                         button.component-part__btn-edit
                                             svg.component-part__edit-component-icon
                                                 use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
@@ -38,6 +39,8 @@ case component[0].partName
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
                         td.component-part__table-item
                             input.component-part__input-length#length(type="text", name="length", placeholder="Input Property")
+                        td.component-part__table-item
+                            input.component-part__input-img(type="file" ,id=`compoImg`, accept="image/*")
 
     when "Outer Fin"
         table.component-part__table
@@ -49,6 +52,9 @@ case component[0].partName
                     th.component-part__table-header-prob-1 Fin Pitch
                     th.component-part__table-header-prob-1 Fin Wave
                     th.component-part__table-header-prob-1 Fin Slit
+                    th.component-part__table-header-img Picture
+
+                    
             tbody.component-part__table-body   
                 each compo,index in component 
                     tr.component-part__table-row 
@@ -58,10 +64,13 @@ case component[0].partName
                         td.component-part__table-item-prob-1= compo.pitch
                         td.component-part__table-item-prob-1= compo.wave
                         td.component-part__table-item-prob-1= compo.slit
+                        td.component-part__table-item-img
+                            img.component-part__table-item-img-img(src=`${compo.img}`, alt=`${compo.partName}`)
+
                         td.component-part__table-header-edit 
                             ul.component-part__list-edit 
                                 li.component-part__item-edit  
-                                    a.component-part__link-edit(href="#")  
+                                    a.component-part__link-edit(href=`/outerfin/update/${compo._id}`)  
                                         button.component-part__btn-edit
                                             svg.component-part__edit-component-icon
                                                 use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
@@ -88,6 +97,8 @@ case component[0].partName
                             input.component-part__input-partNo#wave(type="text", name="wave" ,placeholder="Fin Wave")
                         td.component-part__table-item
                             input.component-part__input-partNo#slit(type="text", name="slit" ,placeholder="Fin Slit")
+                        td.component-part__table-item
+                            input.component-part__input-img(type="file" ,id=`compoImg`, accept="image/*")
 
     when "Cup Plate"
         table.component-part__table
@@ -96,16 +107,20 @@ case component[0].partName
                     th.component-part__table-header-no No
                     th.component-part__table-header-partno Part No
                     th.component-part__table-header-prob-1 Side
+                    th.component-part__table-header-img Picture
+
             tbody.component-part__table-body 
                 each compo,index in component 
                     tr.component-part__table-row 
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo 
                         td.component-part__table-item-prob-1= compo.side
+                        td.component-part__table-item-img
+                            img.component-part__table-item-img-img(src=`${compo.img}`, alt=`${compo.partName}`)
                         td.component-part__table-header-edit 
                             ul.component-part__list-edit 
                                 li.component-part__item-edit  
-                                    a.component-part__link-edit(href="#")  
+                                    a.component-part__link-edit(href=`/cupplate/update/${compo._id}`)  
                                         button.component-part__btn-edit
                                             svg.component-part__edit-component-icon
                                                 use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
@@ -114,6 +129,7 @@ case component[0].partName
                                         button.component-part__btn-delete
                                             svg.component-part__edit-component-icon
                                                 use(xlink:href="img/Icon/symbol-defs.svg#icon-cross")
+                          
             tbody.component-part__table-body
                 form.addnewcupplate
                     tr.component-part__table-row
@@ -126,7 +142,9 @@ case component[0].partName
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
                         td.component-part__table-item
                             input.component-part__input-length#side(type="text", name="side", placeholder="Input Cup Side")
-    
+                        td.component-part__table-item
+                            input.component-part__input-img(type="file" ,id=`compoImg`, accept="image/*")
+
     when "Separator"
         table.component-part__table
             thead.component-part__table-thead
@@ -134,16 +152,20 @@ case component[0].partName
                     th.component-part__table-header-no No
                     th.component-part__table-header-partno Part No
                     th.component-part__table-header-prob-1 Function
+                    th.component-part__table-header-img Picture
+
             tbody.component-part__table-body 
                 each compo,index in component 
                     tr.component-part__table-row 
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo 
                         td.component-part__table-item-prob-1= compo.func
+                        td.component-part__table-item-img
+                            img.component-part__table-item-img-img(src=`${compo.img}`, alt=`${compo.partName}`)
                         td.component-part__table-header-edit 
                             ul.component-part__list-edit 
                                 li.component-part__item-edit  
-                                    a.component-part__link-edit(href="#")  
+                                    a.component-part__link-edit(href=`/separator/update/${compo._id}`)  
                                         button.component-part__btn-edit
                                             svg.component-part__edit-component-icon
                                                 use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
@@ -163,22 +185,29 @@ case component[0].partName
                         td.component-part__table-item
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
                         td.component-part__table-item
-                            input.component-part__input-length#function(type="text", name="function", placeholder="Function")
+                            input.component-part__input-length#function(type="text", name="func", placeholder="Function")
+                        td.component-part__table-item
+                            input.component-part__input-img(type="file" ,id=`compoImg`, accept="image/*")
+
     when "Cap" 
         table.component-part__table
             thead.component-part__table-thead
                 tr.component-part__table-row
                     th.component-part__table-header-no No
                     th.component-part__table-header-partno Part No
+                    th.component-part__table-header-img Picture
             tbody.component-part__table-body 
                 each compo,index in component 
                     tr.component-part__table-row 
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo
+                        td.component-part__table-item-img
+                            img.component-part__table-item-img-img(src=`${compo.img}`, alt=`${compo.partName}`)
+
                         td.component-part__table-header-edit 
                             ul.component-part__list-edit 
                                 li.component-part__item-edit  
-                                    a.component-part__link-edit(href="#")  
+                                    a.component-part__link-edit(href=`/cap/update/${compo._id}`)  
                                         button.component-part__btn-edit
                                             svg.component-part__edit-component-icon
                                                 use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
@@ -197,6 +226,9 @@ case component[0].partName
                                         use(xlink:href="img/Icon/symbol-defs.svg#icon-plus")
                         td.component-part__table-item
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
+                        td.component-part__table-item
+                            input.component-part__input-img(type="file" ,id=`compoImg`, accept="image/*")
+    
     when "Joint"                    
         table.component-part__table
             thead.component-part__table-thead
@@ -204,16 +236,20 @@ case component[0].partName
                     th.component-part__table-header-no No
                     th.component-part__table-header-partno Part No
                     th.component-part__table-header-prob-1 Type
+                    th.component-part__table-header-img Picture
+                    
             tbody.component-part__table-body 
                 each compo,index in component 
                     tr.component-part__table-row 
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo 
                         td.component-part__table-item-prob-1= compo.type
+                        td.component-part__table-item-img
+                            img.component-part__table-item-img-img(src=`${compo.img}`, alt=`${compo.partName}`)
                         td.component-part__table-header-edit 
                             ul.component-part__list-edit 
                                 li.component-part__item-edit  
-                                    a.component-part__link-edit(href="#")  
+                                    a.component-part__link-edit(href=`/joint/update/${compo._id}`)   
                                         button.component-part__btn-edit
                                             svg.component-part__edit-component-icon
                                                 use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
@@ -234,6 +270,9 @@ case component[0].partName
                             input.component-part__input-partNo#partNo(type="text", name="partNo" ,placeholder="Input New Part No")
                         td.component-part__table-item
                             input.component-part__input-length#type(type="text", name="type", placeholder="Type")
+                        td.component-part__table-item
+                            input.component-part__input-img(type="file" ,id=`compoImg`, accept="image/*")
+   
     default
         table.component-part__table
             thead.component-part__table-thead
@@ -242,17 +281,22 @@ case component[0].partName
                     th.component-part__table-header-partno Part No
                     th.component-part__table-header-prob-1 Side
                     th.component-part__table-header-prob-1 Length
+                    th.component-part__table-header-img Picture
+
+
             tbody.component-part__table-body 
                 each compo,index in component 
                     tr.component-part__table-row 
                         td.component-part__table-item-no= index+1
                         td.component-part__table-item-partno= compo.partNo 
                         td.component-part__table-item-prob-1= compo.side
-                        td.component-part__table-item-prob-1 Length
+                        td.component-part__table-item-prob-1= compo.length
+                        td.component-part__table-item-img
+                            img.component-part__table-item-img-img(src=`${compo.img}`, alt=`${compo.partName}`)
                         td.component-part__table-header-edit 
                             ul.component-part__list-edit 
                                 li.component-part__item-edit  
-                                    a.component-part__link-edit(href="#")  
+                                    a.component-part__link-edit(href=`/${component[0].partName.toLowerCase().split(" ").join("")}/update/${compo._id}`)  
                                         button.component-part__btn-edit
                                             svg.component-part__edit-component-icon
                                                 use(xlink:href="img/Icon/symbol-defs.svg#icon-pencil")
@@ -262,7 +306,7 @@ case component[0].partName
                                             svg.component-part__edit-component-icon
                                                 use(xlink:href="img/Icon/symbol-defs.svg#icon-cross")                
             tbody.component-part__table-body
-                form.addnewcompo
+                form.addnewcompo(id=`${component[0].partName.toLowerCase().split(" ").join("")}form`)
                     tr.component-part__table-row
                         td.component-part__table-item
                             a.component-part__link 
@@ -275,171 +319,6 @@ case component[0].partName
                             input.component-part__input-length#side(type="text", name="side", placeholder="Side")
                         td.component-part__table-item
                             input.component-part__input-length#length(type="text", name="length", placeholder="Length")
-
-
-
-//- case component[0].partName
-//-     when "Inner Fin Tube" 
-        
-//-     when "Outer Fin"
-//-         //- table.table.table-dark.table-hover 
-//-         //-     thead   
-//-         //-         tr 
-//-         //-             th(scope = "col" style="width:5%" ) No 
-//-         //-             th(scope = "col" ) Part No
-//-         //-             th(scope = "col" ) Fin Length
-//-         //-             th(scope = "col" ) Fin Pitch
-//-         //-             th(scope = "col" ) Fin Wave
-//-         //-             th.w-5(scope = "col" ) Slit
-                    
-//-         //-     tbody
-//-         //-             each compo,index in component
-//-         //-                 tr 
-//-         //-                     th(scope = "row")= index+1
-//-         //-                     td= compo.partNo
-//-         //-                     td= compo.length
-//-         //-                     td= compo.pitch 
-//-         //-                     td= compo.wave 
-//-         //-                     td= compo.slit
-//-         //-     tbody
-//-         //-         tr 
-//-         //-             form.form.addnewouterfin
-//-         //-                 td
-//-         //-                     button.btn.btn-danger Add
-//-         //-                 td 
-//-         //-                     input#partNo(type="text", name="partNo", style="width: 90%" )
-//-         //-                 td
-//-         //-                     input#length(type="text", name="length",style="width: 90%" )
-//-         //-                 td
-//-         //-                     input#pitch(type="text", name="pitch" ,style="width: 90%" )
-//-         //-                 td
-//-         //-                     input#wave(type="text", name="wave" ,style="width: 90%" )
-//-         //-                 td
-//-         //-                     input#slit(type="text", name="slit" ,style="width: 90%"  )
-
-//-     when "Cup Plate" 
-//-         //- table.table.table-dark.table-hover 
-//-         //-     thead   
-//-         //-         tr 
-//-         //-             th(scope = "col" style="width:5%") No 
-//-         //-             th(scope = "col") Part No
-//-         //-             th(scope = "col") Side
-                    
-//-         //-     tbody
-//-         //-             each compo,index in component
-//-         //-                 tr 
-//-         //-                     th(scope = "row")= index+1
-//-         //-                     td= compo.partNo
-//-         //-                     td= compo.side
-//-         //-     tbody
-//-         //-         tr 
-//-         //-             form.form.addnewcupplate
-//-         //-                 td
-//-         //-                     button.btn.btn-danger Add
-//-         //-                 td 
-//-         //-                     input#partNo(type="text", name="partNo")
-//-         //-                 td
-//-         //-                     input#side(type="text", name="side")
-    
-//-     when "Separator" 
-//-         //- table.table.table-dark.table-hover  
-//-         //-     thead   
-//-         //-         tr 
-//-         //-             th(scope = "col" style="width:5%") No 
-//-         //-             th(scope = "col") Part No
-//-         //-             th(scope = "col") Function
-                    
-//-         //-     tbody
-//-         //-             each compo,index in component
-//-         //-                 tr 
-//-         //-                     th(scope = "row")= index+1
-//-         //-                     td= compo.partNo
-//-         //-                     td= compo.func
-
-//-         //-     tbody
-//-         //-     tr 
-//-         //-         form.form.addseparator
-//-         //-             td
-//-         //-                 button.btn.btn-danger Add
-//-         //-             td 
-//-         //-                 input#partNo(type="text", name="partNo")
-//-         //-             td
-//-         //-                 input#function(type="text", name="function")
-
-//-     when "Cap" 
-//-         //- table.table.table-dark.table-hover  
-//-         //-     thead   
-//-         //-         tr 
-//-         //-             th(scope = "col" style="width:5%") No 
-//-         //-             th(scope = "col") Part No
-                    
-//-         //-     tbody
-//-         //-             each compo,index in component
-//-         //-                 tr 
-//-         //-                     th(scope = "row")= index+1
-//-         //-                     td= compo.partNo
-
-//-         //-     tbody
-//-         //-         tr 
-//-         //-             form.form.addcap
-//-         //-                 td
-//-         //-                     button.btn.btn-danger Add
-//-         //-                 td 
-//-         //-                     input#partNo(type="text", name="partNo")
-        
-//-     when "Joint" 
-//-         //- table.table.table-dark.table-hover  
-//-         //-     thead   
-//-         //-         tr 
-//-         //-             th(scope = "col" style="width:5%") No 
-//-         //-             th(scope = "col") Part No
-//-         //-             th(scope = "col") Type
-                    
-//-         //-     tbody
-//-         //-             each compo,index in component
-//-         //-                 tr 
-//-         //-                     th(scope = "row")= index+1
-//-         //-                     td= compo.partNo
-//-         //-                     td= compo.type
-
-//-         //-     tbody
-//-         //-         tr 
-//-         //-             form.form.addjoint
-//-         //-                 td
-//-         //-                     button.btn.btn-danger Add
-//-         //-                 td 
-//-         //-                     input#partNo(type="text", name="partNo")
-//-         //-                 td 
-//-         //-                     input#type(type="text", name="type")
-
-
-//-     default
-//-         //- table.table.table-dark.table-hover  
-//-         //-     thead   
-//-         //-         tr 
-//-         //-             th(scope = "col" style="width:5%") No 
-//-         //-             th(scope = "col") Part No
-//-         //-             th(scope = "col") Side
-//-         //-             th(scope = "col") Length
-                    
-//-         //-     tbody
-//-         //-             each compo,index in component
-//-         //-                 tr 
-//-         //-                     th(scope = "row")= index+1
-//-         //-                     td= compo.partNo
-//-         //-                     td= compo.side 
-
-//-         //-     tbody
-//-         //-         tr 
-//-         //-             form.form.addnewcompo
-//-         //-                 td
-//-         //-                     button.btn.btn-danger Add
-//-         //-                 td 
-//-         //-                     input#partNo(type="text", name="partNo")
-//-         //-                 td
-//-         //-                     input#side(type="text", name="side")
-//-         //-                 td
-//-         //-                     input#length(type="text", name="length")
-
-
-    //- "Inner Fin Tube","Outer Fin","Side Plate","Plate Header","Tank Header","Separator","Cap","Cup Plate","Joint"
+                        td.component-part__table-item
+                            input.component-part__input-img(type="file" ,id=`compoImg`, accept="image/*")
+   

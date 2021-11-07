@@ -1,12 +1,14 @@
 extends base
+//- include _updateComponent
 include _componentHeader
 block append head
 
 
 block content
 
-    .component-part
+    .component-part(id="component--page")
         +navComponent(component[0].partName)
 
         .component-part__view
             include componentTable
+   

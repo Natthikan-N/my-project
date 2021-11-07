@@ -1,28 +1,11 @@
-// //const bootstrap = require("bootstrap");
-// import "../../node_modules/bootstrap/js/dist/util.js";
-// import "bootstrap/js/dist/modal";
-// import "bootstrap/dist/js/bootstrap.bundle.min";
-// import "pdfjs-dist/legacy/build/pdf.js";
-// import "pdfjs-dist/webpack";
-
 import "@babel/polyfill";
 import FormData from "form-data";
-import { createNewComponent } from "./createComponent";
+import { createNewComponent, updateComponent } from "./manageComponent";
 // import { getPart } from "./componentSelect";
 import { createNewCore } from "./createNewCore";
 import { updateQPoint } from "./updateQPoint";
 import { getCore, getCores } from "./getCore";
 import { updateCore } from "./updateCore";
-
-// import {
-//   innerfintubePartNo,
-//   outerfinPartNo,
-//   plateheaderPartNo,
-//   sideplatePartNo,
-//   tankheaderPartNo,
-// } from "./partNo";
-
-// console.log("Hello from Mars");
 
 //Create New Part
 const innerfinform = document.querySelector(".addnewinnnerfintube");
@@ -31,24 +14,44 @@ const cupplateform = document.querySelector(".addnewcupplate");
 const separatorform = document.querySelector(".addseparator");
 const capform = document.querySelector(".addcap");
 const jointform = document.querySelector(".addjoint");
-const compoform = document.querySelector(".addnewcompo");
+const sideplateform = document.getElementById("sideplateform");
+const plateheaderform = document.getElementById("plateheaderform");
+const tankheaderform = document.getElementById("tankheaderform");
 
 //Create New Core
 const coreform = document.querySelector(".createCore");
 
-//Component Select in create core page
-// const innerfintubelist = document.getElementById("innerfintubelist");
-// const outerfinlist = document.getElementById("outerfinlist");
-// const sideplatetoplist = document.getElementById("sideplatetoplist");
-// const sideplatebuttomlist = document.getElementById("sideplatebuttomlist");
-// const plateheadertoplist = document.getElementById("plateheadertoplist");
-// const plateheaderbuttomlist = document.getElementById("plateheaderbuttomlist");
-// const tankheadertoplist = document.getElementById("tankheadertoplist");
-// const tankbuttomlist = document.getElementById("tankheaderbuttomlist");
-// const cupplatelowerlist = document.getElementById("cupplatelowerlist");
-// const cupplateupperlist = document.getElementById("cupplateupperlist");
-// const jointlist = document.getElementById("jointlist");
-// const caplist = document.getElementById("caplist");
+//Update Component part
+const updateInnerfinForm = document.querySelector(
+  ".update-component__Innerfintubeform"
+);
+const updateOuterFinForm = document.querySelector(
+  ".update-component__Outerfinform"
+);
+
+const updateCupPlateForm = document.querySelector(
+  ".update-component__Cupplateform"
+);
+
+const updateSeparatorForm = document.querySelector(
+  ".update-component__Separatorform"
+);
+
+const updateTankHeaderForm = document.querySelector(
+  ".update-component__TankHeaderform"
+);
+
+const updatePlateHeaderForm = document.querySelector(
+  ".update-component__PlateHeaderform"
+);
+
+const updateSidePlateForm = document.querySelector(
+  ".update-component__SidePlateform"
+);
+
+const updateJointForm = document.querySelector(".update-component__Jointform");
+
+const updateCapForm = document.querySelector(".update-component__Capform");
 
 //Q-point
 const qpointForm = document.querySelector(".update-qpoint__form");
@@ -62,137 +65,72 @@ const rendermodel = document.getElementById("qpoint-model");
 if (innerfinform) {
   innerfinform.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    const partNo = document.getElementById("partNo").value;
-    const length = document.getElementById("length").value;
-
-    createNewComponent({ partNo, length }, "innerfintube");
+    createNewComponent(componentForm(innerfinform), "innerfintube");
   });
 }
 
 if (outerfinform) {
   outerfinform.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    const partNo = document.getElementById("partNo").value;
-    const length = document.getElementById("length").value;
-    const pitch = document.getElementById("pitch").value;
-    const wave = document.getElementById("wave").value;
-    const slit = document.getElementById("slit").value;
-
-    createNewComponent({ partNo, length, pitch, wave, slit }, "outerfin");
+    createNewComponent(componentForm(outerfinform), "outerfin");
   });
 }
 
 if (cupplateform) {
   cupplateform.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    const partNo = document.getElementById("partNo").value;
-    const side = document.getElementById("side").value;
-
-    createNewComponent({ partNo, side }, "cupplate");
+    createNewComponent(componentForm(cupplateform), "cupplate");
   });
 }
 
 if (separatorform) {
   separatorform.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    const partNo = document.getElementById("partNo").value;
-    const func = document.getElementById("function").value;
-
-    createNewComponent({ partNo, func }, "separator");
+    createNewComponent(componentForm(separatorform), "separator");
   });
 }
 
 if (capform) {
   capform.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    const partNo = document.getElementById("partNo").value;
-
-    createNewComponent({ partNo }, "cap");
+    createNewComponent(componentForm(capform), "cap");
   });
 }
 
 if (jointform) {
   jointform.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    const partNo = document.getElementById("partNo").value;
-    const type = document.getElementById("type").value;
-
-    createNewComponent({ partNo, type }, "joint");
+    createNewComponent(componentForm(jointform), "joint");
   });
 }
 
-// if (compoform) {
-//   compoform.addEventListener("submit", (e) => {
-//     e.preventDefault();
+if (sideplateform) {
+  sideplateform.addEventListener("submit", (e) => {
+    e.preventDefault();
+    createNewComponent(componentForm(sideplateform), "sideplate");
+  });
+}
 
-//     const partNo = document.getElementById("partNo").value;
-//     const side = document.getElementById("side").value;
+if (plateheaderform) {
+  plateheaderform.addEventListener("submit", (e) => {
+    e.preventDefault();
+    createNewComponent(componentForm(plateheaderform), "plateheader");
+  });
+}
 
-//     switch (partNo.slice(2).split("-")[0]) {
-//       case sideplatePartNo:
-//         createNewComponent({ partNo, side }, "sideplate");
-//         break;
-//       case plateheaderPartNo:
-//         createNewComponent({ partNo, side }, "plateheader");
-//         break;
-//       case tankheaderPartNo:
-//         createNewComponent({ partNo, side }, "tankheader");
-//         break;
-//       default:
-//         console.log("Not our current part no");
-//     }
-//   });
-// }
+if (tankheaderform) {
+  tankheaderform.addEventListener("submit", (e) => {
+    e.preventDefault();
+    createNewComponent(componentForm(tankheaderform), "tankheader");
+  });
+}
 
-// const addNewCore = document.getElementById("core-detail__item-link");
-// const createCorePage = document.querySelector(".create-core ");
+const componentForm = (formElement) => {
+  const form = new FormData(formElement);
+  form.append("componentImg", document.getElementById("compoImg").files[0]);
 
-// window.addEventListener("load", (e) => {
-//   e.preventDefault();
-//   // console.log(window.document);
-
-//   // selectorlist(innerfintubelist, "innerfintube");
-//   // selectorlist(outerfinlist, "outerfin");
-//   // selectorlist(sideplatetoplist, "sideplate");
-//   // selectorlist(sideplatebuttomlist, "sideplate");
-//   // selectorlist(plateheadertoplist, "plateheader");
-//   // selectorlist(plateheaderbuttomlist, "plateheader");
-//   // selectorlist(tankheadertoplist, "tankheader");
-//   // selectorlist(tankbuttomlist, "tankheader");
-//   // selectorlist(cupplatelowerlist, "cupplate");
-//   // selectorlist(cupplateupperlist, "cupplate");
-//   // selectorlist(jointlist, "joint");
-//   // selectorlist(caplist, "cap");
-// });
-
-// const selectorlist = (element, route) => {
-//   //clear element and add default value
-//   element.innerHTML = "";
-//   element.insertAdjacentHTML(
-//     "beforeend",
-//     `<option value="default">Select Part No</option>`
-//   );
-
-//   //add part no in list
-//   const getPartList = async function () {
-//     const part = await getPart(route);
-
-//     part.map((val) => {
-//       element.insertAdjacentHTML(
-//         "beforeend",
-//         `<option value="${val.partNo}">${val.partNo}</option>`
-//       );
-//     });
-//   };
-
-//   getPartList();
-// };
+  return form;
+};
 
 //To Create New Core
 if (coreform) {
@@ -207,8 +145,6 @@ if (coreform) {
 if (qpointForm) {
   qpointForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("Click from qpoint form");
-
     const form = new FormData(qpointForm);
     form.append("qpoint", document.getElementById("qpoint-file").files[0]);
 
@@ -258,9 +194,71 @@ const updateCoreform = document.querySelector(".updateCoreform");
 if (updateCoreform) {
   updateCoreform.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("hello from update core form");
     const form = new FormData(updateCoreform);
     form.append("img", document.getElementById("coreImg").files[0]);
     updateCore(form);
+  });
+}
+
+if (updateInnerfinForm) {
+  updateInnerfinForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    updateComponent(componentForm(updateInnerfinForm), "innerfintube");
+  });
+}
+
+if (updateOuterFinForm) {
+  updateOuterFinForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    updateComponent(componentForm(updateOuterFinForm), "outerfin");
+  });
+}
+
+if (updateCupPlateForm) {
+  updateCupPlateForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    updateComponent(componentForm(updateCupPlateForm), "cupplate");
+  });
+}
+
+if (updateSeparatorForm) {
+  updateSeparatorForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    updateComponent(componentForm(updateSeparatorForm), "separator");
+  });
+}
+
+if (updateTankHeaderForm) {
+  updateTankHeaderForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    updateComponent(componentForm(updateTankHeaderForm), "tankheader");
+  });
+}
+
+if (updatePlateHeaderForm) {
+  updatePlateHeaderForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    updateComponent(componentForm(updatePlateHeaderForm), "plateheader");
+  });
+}
+
+if (updateSidePlateForm) {
+  updateSidePlateForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    updateComponent(componentForm(updateSidePlateForm), "sideplate");
+  });
+}
+
+if (updateCapForm) {
+  updateCapForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    updateComponent(componentForm(updateCapForm), "cap");
+  });
+}
+
+if (updateJointForm) {
+  updateJointForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    updateComponent(componentForm(updateJointForm), "joint");
   });
 }

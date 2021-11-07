@@ -7,10 +7,6 @@ mixin componentPartSelect(label,idpart_1,idpart_2,name1,name2,component)
                     option SELECT PART NO.
                     each compo in component
                         option= compo.partNo 
-            //- .mb-3.row 
-            //-     label.col-sm-3.col-form-label(for =`${id}`) #{label}
-            //-     .col-sm-4
-            //-         select.form-select(id=`${idpart_1}`,name=`${name1}_detail`)
 
         if(name1=="innerfintubes"||name1=="outerfins")
             li.create-core__component-item
@@ -32,26 +28,12 @@ mixin componentPartSelect(label,idpart_1,idpart_2,name1,name2,component)
                 option SELECT PART NO.
                 each compo in component
                     option= compo.partNo
-        //- .mb-3.row 
-        //-     label.col-sm-3.col-form-label() #{label}
-        //-     .col-sm-4
-        //-         select.form-select(id=`${idpart_1}`,name=`${name1}`)
-        //-     .col-sm-4
-        //-         select.form-select(id=`${idpart_2}`,name=`${name2}`)
 
 mixin separatorSelect(label,id,type,placeholder)
     li.create-core__component-combind-item
         label.create-core__component-combind-label(for="" )  #{label}
         input.create-core__component-combind-input-text(id=`${id}qty`,type=`${type}` placeholder=`${placeholder}` name=`separators_${id}`)
 
-    //- .mb-3.row 
-    //-     label.col-sm-3.col-form-label(for=`${id}`) #{labeltext}
-    //-     .col-sm-4
-    //-         .form-check     
-    //-             input.form-check-input(id=`${id}`,type=`${type_1}`)
-    //-             label.form-check-label(for=`${id}`) #{label_checkbox}
-    //-     .col-sm-4
-    //-         input.form-control(id=`${id}qty`,type=`${type_2}` placeholder=`${placeholder}` name=`separators_${id}`)
 
 
 mixin coreProperties(labelfor,id,type,placeholder,text,name)
@@ -59,7 +41,4 @@ mixin coreProperties(labelfor,id,type,placeholder,text,name)
         label.create-core__properties-label(for=`${labelfor}`) #{text}
         input.create-core__properties-input-text(type=`${type}` ,id=`${id}`,name=`${name}` )
 
-    //- .mb-3.row 
-    //-     label.col-sm-3.col-form-label(for= `${labelfor}`) #{text}
-    //-     .col-sm-5 
-    //-         input.form-control(id=`${id}`, type=`${type}`, placeholder=`${placeholder}`, name=`${name}`)
+    

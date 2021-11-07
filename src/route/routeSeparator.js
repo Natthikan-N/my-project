@@ -5,7 +5,12 @@ const separatorController = require("../controller/separatorController");
 router
   .route("/")
   .get(separatorController.getAllSeparators)
-  .post(separatorController.createSeparator);
+  .post(separatorController.uploadImage, separatorController.createSeparator)
+  .patch(
+    separatorController.uploadImage,
+    separatorController.getSeparatorId,
+    separatorController.updateExitingSeparator
+  );
 
 router
   .route("/:id")

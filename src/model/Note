@@ -12,7 +12,7 @@ const coreSchema = new mongoose.Schema({
     required: [true, "Must have part no."],
     unique: true,
   },
-  
+
   properties: {
     type: Object,
     coreWidth: { type: Number, default: 0 },
@@ -26,11 +26,14 @@ const coreSchema = new mongoose.Schema({
   }, //properties
 
   innerfintubes: {
-  detail: { type: mongoose.Schema.ObjectId, ref: "InnerFinTube" /*same name as schema */},
+    detail: {
+      type: mongoose.Schema.ObjectId,
+      ref: "InnerFinTube" /*same name as schema */,
+    },
     amount: { type: Number },
   },
 
-  outerfins:{
+  outerfins: {
     detail: { type: mongoose.Schema.ObjectId, ref: "OuterFin" },
     amount: { type: Number },
   },
@@ -48,15 +51,10 @@ const coreSchema = new mongoose.Schema({
       amount: { type: Number },
       // partNo: { type: String, required: [true, "Must have part no."] },
       // amount: { type: Number, default: 1 },
-    }
+    },
   },
-  
-
-
-
 
   component: {
-
     // outerFin: {
     //   type: Object,
     //   partNo: { type: String, required: [true, "Must have part no."] },
@@ -173,14 +171,6 @@ const coreSchema = new mongoose.Schema({
     },
   }, //component
 }); //coreSchema
-
-//middleware
-
-// coreSchema.pre(/^find/, function (next) {
-//   this.populate("component");
-//   console.log("hello from coreModel");
-//   //next();
-// });
 
 const Core = mongoose.model("Core", coreSchema);
 module.exports = Core;

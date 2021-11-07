@@ -46,11 +46,8 @@ exports.createModel = (Model) => async (req, res) => {
     res.status(404).json({
       status: "fail",
       message: "page not found",
-      data:{model}
-      
-    }
-    );
-    
+      data: { model },
+    });
   }
 };
 
@@ -86,3 +83,73 @@ exports.deleteModel = (Model) => async (req, res) => {
     });
   }
 };
+
+exports.createComponent = (Component, fileFolder) => async (req, res) => {
+  try {
+    if (req.file)
+      Object.assign(req.body, {
+        img: `/img/${fileFolder}/${req.file.filename}`,
+      });
+
+    const component = await Component.create(req.body);
+
+    res.status(200).json({
+      status: "success",
+      data: { component },
+    });
+  } catch {
+    res.status(404).json({
+      status: "fail",
+      message: "page not found",
+      data: { component },
+    });
+  }
+};
+
+exports.updateComponent = (Component, fileFolder) => async (req, res) => {
+  try {
+    if (req.file)
+      Object.assign(req.body, {
+        img: `/img/${fileFolder}/${req.file.filename}`,
+      });
+    const component = await Component.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+  } catch {
+    res.status(404).json({
+      status: "fail",
+      message: "page not found",
+      data: { component },
+    });
+  }
+};
+
+exports.updateExitingComponent =
+  (Component, fileFolder) => async (req, res) => {
+    try {
+      if (req.file)
+        Object.assign(req.body, {
+          img: `/img/${fileFolder}/${req.file.filename}`,
+        });
+
+      const component = await Component.findByIdAndUpdate(
+        req.body.id,
+        req.body
+      );
+
+      res.status(200).json({
+        status: "success",
+        data: { component },
+      });
+    } catch {
+      res.status(404).json({
+        status: "fail",
+        message: "page not found",
+      });
+    }
+  };

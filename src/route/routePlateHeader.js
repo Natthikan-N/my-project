@@ -5,7 +5,15 @@ const plateHeaderController = require("../controller/plateHeaderController");
 router
   .route(`/`)
   .get(plateHeaderController.getAllPlateHeaders)
-  .post(plateHeaderController.createPlateHeader);
+  .post(
+    plateHeaderController.uploadImage,
+    plateHeaderController.createPlateHeader
+  )
+  .patch(
+    plateHeaderController.uploadImage,
+    plateHeaderController.getPlateHeaderId,
+    plateHeaderController.updateExitingPlateHeader
+  );
 
 router
   .route("/:id")

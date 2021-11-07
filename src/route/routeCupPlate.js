@@ -5,7 +5,12 @@ const cupPlateController = require("../controller/cupPlateController");
 router
   .route("/")
   .get(cupPlateController.getAllCupPlates)
-  .post(cupPlateController.createCupPlate);
+  .post(cupPlateController.uploadImage, cupPlateController.createCupPlate)
+  .patch(
+    cupPlateController.uploadImage,
+    cupPlateController.getCupPlateId,
+    cupPlateController.updateExitingCupPlate
+  );
 
 router
   .route("/:id")

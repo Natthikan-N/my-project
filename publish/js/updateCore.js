@@ -1,9 +1,6 @@
 import axios from "axios";
 
 export const updateCore = async (data) => {
-  console.log("hi form updatecore js");
-  // console.log(file);
-  //   console.log(data);
   try {
     const res = await axios({
       method: "patch",

@@ -5,7 +5,12 @@ const jointController = require("../controller/jointController");
 router
   .route(`/`)
   .get(jointController.getAllJoints)
-  .post(jointController.createJoint);
+  .post(jointController.uploadImage, jointController.createJoint)
+  .patch(
+    jointController.uploadImage,
+    jointController.getJointId,
+    jointController.updateExitingJoint
+  );
 
 router
   .route("/:id")

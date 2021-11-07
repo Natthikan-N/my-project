@@ -5,7 +5,12 @@ const sidePlateController = require("../controller/sidePlateController");
 router
   .route(`/`)
   .get(sidePlateController.getAllSidePlates)
-  .post(sidePlateController.createSidePlate);
+  .post(sidePlateController.uploadImage, sidePlateController.createSidePlate)
+  .patch(
+    sidePlateController.uploadImage,
+    sidePlateController.getSidePlateId,
+    sidePlateController.updateExitingSidePlate
+  );
 
 router
   .route("/:id")

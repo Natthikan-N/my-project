@@ -1,0 +1,160 @@
+extends base
+block append head
+
+block content
+    case part.partName 
+        when "Inner Fin Tube"  
+            .update-component
+                .update-component__block-header
+                    h1.update-component__head update   
+                        span= part.partName
+                
+                .update-component__block
+                    form.update-component__form.update-component__Innerfintubeform
+                        ul.update-component__list 
+                            li.update-component__item
+                                label.update-component__label Part No.:
+                                input.update-component__input-text(type="text" ,id="compo-partNo",name="partNo" ,value=`${part.partNo}`)
+                            li.update-component__item
+                                label.update-component__label Length :
+                                input.update-component__input-text(type="text" ,id="compo-length",name="length" , value=`${part.length}` )
+                            li.update-component__item
+                                label.update-component__label Image: 
+                                input.update-component__input-file(type="file" ,id=`compoImg`, accept="image/*") 
+                            li.update-component__item
+                                button.update-component__btn update
+
+        when "Outer Fin"  
+            .update-component
+                .update-component__block-header
+                    h1.update-component__head update   
+                        span= part.partName
+                
+                .update-component__block
+                    form.update-component__form.update-component__Outerfinform
+                        ul.update-component__list 
+                            li.update-component__item
+                                label.update-component__label Part No.:
+                                input.update-component__input-text(type="text" ,id="compo-partNo",name="partNo" ,value=`${part.partNo}`)
+                            li.update-component__item
+                                label.update-component__label Length :
+                                input.update-component__input-text(type="text" ,id="compo-length",name="length" , value=`${part.length}` )
+                            li.update-component__item
+                                label.update-component__label Fin Slit:
+                                input.update-component__input-text(type="text" ,id="compo-slit",name="slit" ,value=`${part.slit}`)
+                            li.update-component__item
+                                label.update-component__label Fin Pitch.:
+                                input.update-component__input-text(type="text" ,id="compo-pitch",name="pitch" ,value=`${part.pitch}`)
+                            li.update-component__item
+                                label.update-component__label Fin Wave.:
+                                input.update-component__input-text(type="text" ,id="compo-wave",name="wave" ,value=`${part.wave}`)
+                            li.update-component__item
+                                label.update-component__label Image: 
+                                input.update-component__input-file(type="file" ,id=`compoImg`, accept="image/*") 
+                            li.update-component__item
+                                button.update-component__btn update
+
+        when "Cup Plate"  
+            .update-component
+                .update-component__block-header
+                    h1.update-component__head update   
+                        span= part.partName
+                
+                .update-component__block
+                    form.update-component__form.update-component__Cupplateform
+                        ul.update-component__list 
+                            li.update-component__item
+                                label.update-component__label Part No.:
+                                input.update-component__input-text(type="text" ,id="compo-partNo",name="partNo" ,value=`${part.partNo}`)
+                            li.update-component__item
+                                label.update-component__label Length :
+                                input.update-component__input-text(type="text" ,id="compo-side",name="side" , value=`${part.side}` )
+                            li.update-component__item
+                                label.update-component__label Image: 
+                                input.update-component__input-file(type="file" ,id=`compoImg`, accept="image/*") 
+                            li.update-component__item
+                                button.update-component__btn update
+
+        when "Separator"  
+            .update-component
+                .update-component__block-header
+                    h1.update-component__head update   
+                        span= part.partName
+                
+                .update-component__block
+                    form.update-component__form.update-component__Separatorform
+                        ul.update-component__list 
+                            li.update-component__item
+                                label.update-component__label Part No.:
+                                input.update-component__input-text(type="text" ,id="compo-partNo",name="partNo" ,value=`${part.partNo}`)
+                            li.update-component__item
+                                label.update-component__label Function :
+                                input.update-component__input-text(type="text" ,id="compo-func",name="func" , value=`${part.func}`,placeholder="Partition, In1, In2, In3, Out1, Out2, Out3" )
+                            li.update-component__item
+                                label.update-component__label Image: 
+                                input.update-component__input-file(type="file" ,id=`compoImg`, accept="image/*") 
+                            li.update-component__item
+                                button.update-component__btn update
+        
+        when "Cap"  
+            .update-component
+                .update-component__block-header
+                    h1.update-component__head update   
+                        span= part.partName
+                
+                .update-component__block
+                    form.update-component__form.update-component__Capform
+                        ul.update-component__list 
+                            li.update-component__item
+                                label.update-component__label Part No.:
+                                input.update-component__input-text(type="text" ,id="compo-partNo",name="partNo" ,value=`${part.partNo}`)
+                            li.update-component__item
+                                label.update-component__label Image: 
+                                input.update-component__input-file(type="file" ,id=`compoImg`, accept="image/*") 
+                            li.update-component__item
+                                button.update-component__btn update
+
+        when "Joint"  
+            .update-component
+                .update-component__block-header
+                    h1.update-component__head update   
+                        span= part.partName
+                
+                .update-component__block
+                    form.update-component__form.update-component__Jointform
+                        ul.update-component__list 
+                            li.update-component__item
+                                label.update-component__label Part No.:
+                                input.update-component__input-text(type="text" ,id="compo-partNo",name="partNo" ,value=`${part.partNo}`)
+                            li.update-component__item
+                                label.update-component__label Function :
+                                input.update-component__input-text(type="text" ,id="compo-type",name="type" , value=`${part.type}`)
+                            li.update-component__item
+                                label.update-component__label Image: 
+                                input.update-component__input-file(type="file" ,id=`compoImg`, accept="image/*") 
+                            li.update-component__item
+                                button.update-component__btn update
+        
+        default
+            .update-component
+                .update-component__block-header
+                    h1.update-component__head update   
+                        span= part.partName
+                
+                .update-component__block
+                    form.update-component__form(class=`update-component__${part.partName.split(" ").join("")}form`)
+                        ul.update-component__list 
+                            li.update-component__item
+                                label.update-component__label Part No.:
+                                input.update-component__input-text(type="text" ,id="compo-partNo",name="partNo" ,value=`${part.partNo}`)
+                            li.update-component__item
+                                label.update-component__label Side :
+                                input.update-component__input-text(type="text" ,id="compo-side",name="side" , value=`${part.side}`)
+                            li.update-component__item
+                                label.update-component__label Length :
+                                input.update-component__input-text(type="text" ,id="compo-length",name="length" , value=`${part.length}`)
+                            li.update-component__item
+                                label.update-component__label Image: 
+                                input.update-component__input-file(type="file" ,id=`compoImg`, accept="image/*") 
+                            li.update-component__item
+                                button.update-component__btn update

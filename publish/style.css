@@ -252,6 +252,29 @@ footer {
   color: #ffffff;
   font-size: 80%; }
 
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup__content {
+    width: 75%;
+    background-color: #4d0404;
+    box-shadow: 0 2rem 6rem #1a1d1f;
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
 .list-nav {
   display: flex;
   list-style: none;
@@ -526,12 +549,16 @@ footer {
     .component-part__table-header-no, .component-part__table-item-no {
       width: 5%; }
     .component-part__table-header-partno, .component-part__table-item-partno {
-      width: 35%; }
+      width: 20%; }
     .component-part__table-header-prob-1, .component-part__table-item-prob-1 {
       width: auto; }
+    .component-part__table-header-img, .component-part__table-item-img {
+      width: 22%; }
+      .component-part__table-header-img-img, .component-part__table-item-img-img {
+        height: 5rem; }
     .component-part__table-header-edit, .component-part__table-item-edit {
       width: 10%; }
-    .component-part__table-header-no, .component-part__table-header-partno, .component-part__table-header-prob-1, .component-part__table-header-edit, .component-part__table-item-no, .component-part__table-item-partno, .component-part__table-item-prob-1, .component-part__table-item-edit {
+    .component-part__table-header-no, .component-part__table-header-partno, .component-part__table-header-prob-1, .component-part__table-header-img, .component-part__table-header-edit, .component-part__table-item-no, .component-part__table-item-partno, .component-part__table-item-prob-1, .component-part__table-item-img, .component-part__table-item-edit {
       color: #ffffff;
       font-weight: bold;
       font-size: 1.5rem;
@@ -575,6 +602,16 @@ footer {
     font-size: 1.5rem; }
     .component-part__input-partNo:focus, .component-part__input-length:focus {
       border-style: none; }
+  .component-part__input-img {
+    background-color: #ffffff;
+    margin: 0;
+    width: 80%;
+    height: 2.7rem;
+    padding: 0;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border-style: none;
+    color: #323536; }
 
 .content {
   margin-top: 0;
@@ -857,12 +894,16 @@ footer {
     .component-part__table-header-no, .component-part__table-item-no {
       width: 5%; }
     .component-part__table-header-partno, .component-part__table-item-partno {
-      width: 35%; }
+      width: 20%; }
     .component-part__table-header-prob-1, .component-part__table-item-prob-1 {
       width: auto; }
+    .component-part__table-header-img, .component-part__table-item-img {
+      width: 22%; }
+      .component-part__table-header-img-img, .component-part__table-item-img-img {
+        height: 5rem; }
     .component-part__table-header-edit, .component-part__table-item-edit {
       width: 10%; }
-    .component-part__table-header-no, .component-part__table-header-partno, .component-part__table-header-prob-1, .component-part__table-header-edit, .component-part__table-item-no, .component-part__table-item-partno, .component-part__table-item-prob-1, .component-part__table-item-edit {
+    .component-part__table-header-no, .component-part__table-header-partno, .component-part__table-header-prob-1, .component-part__table-header-img, .component-part__table-header-edit, .component-part__table-item-no, .component-part__table-item-partno, .component-part__table-item-prob-1, .component-part__table-item-img, .component-part__table-item-edit {
       color: #ffffff;
       font-weight: bold;
       font-size: 1.5rem;
@@ -906,6 +947,16 @@ footer {
     font-size: 1.5rem; }
     .component-part__input-partNo:focus, .component-part__input-length:focus {
       border-style: none; }
+  .component-part__input-img {
+    background-color: #ffffff;
+    margin: 0;
+    width: 80%;
+    height: 2.7rem;
+    padding: 0;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border-style: none;
+    color: #323536; }
 
 .create-core {
   margin: 3rem;
@@ -1106,6 +1157,7 @@ footer {
     box-shadow: 1rem 3rem 6rem #1a1d1f; }
 
 .update-qpoint {
+  position: relative;
   margin: 6rem 3rem;
   padding: 2rem;
   background: #323536;
@@ -1154,3 +1206,76 @@ footer {
     background-color: #880000;
     border-style: none;
     box-shadow: 0.5rem 0.5rem 0.7rem #000000; }
+
+.update-component {
+  margin: 2rem;
+  padding: 3rem;
+  background-color: #323536;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap; }
+  .update-component__block-header {
+    margin: 1rem;
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+    width: 50%; }
+  .update-component__head {
+    flex: 0 0 95%;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase; }
+  .update-component__btn-close {
+    flex: 0 0 7%;
+    border-radius: 10rem;
+    border-style: none;
+    box-shadow: 0.5rem 0.5rem 0.7rem #000000;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-right: 1.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold; }
+    .update-component__btn-close:hover {
+      background-color: #880000;
+      color: #ffffff; }
+  .update-component__block {
+    margin: 1rem;
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+    width: 50%; }
+  .update-component__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none; }
+  .update-component__item {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+    font-size: 2rem; }
+  .update-component__label {
+    flex: 0 0 10%;
+    color: #ffffff; }
+  .update-component__input-text, .update-component__input-file {
+    flex: 0 0 70%;
+    font-size: 1.7rem;
+    border-radius: 10rem;
+    background-color: #ffffff;
+    color: #000000; }
+  .update-component__input-text {
+    padding: 0 1rem;
+    border-style: none; }
+  .update-component__btn {
+    border-radius: 10rem;
+    border-style: none;
+    box-shadow: 0.5rem 0.5rem 0.7rem #000000;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold; }
+    .update-component__btn:hover {
+      background-color: #880000;
+      color: #ffffff; }

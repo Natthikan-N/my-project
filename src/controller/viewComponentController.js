@@ -1,8 +1,9 @@
-exports.getComponentPart = (Part) => async (req, res, next) => {
+exports.getComponentPart = (Part, viewpage) => async (req, res, next) => {
   try {
     const part = await Part.findById(req.params.id);
+    // res.status(200).render(`"component"`, {
 
-    res.status(200).render("component", {
+    res.status(200).render(`${viewpage}`, {
       title: `Part No : ${part.partNo}`,
       part,
     });
@@ -31,20 +32,3 @@ exports.getAllProperties = (Component) => async (req, res, next) => {
   }
   next();
 };
-
-// exports.createComponent = (Part) => async (req, res) => {
-//   try {
-//     // const part = await Part.create(req.body);
-
-//     res.status(200).render("addComponent", {
-//       title: `Part No:${part.partNo}`,
-//       part,
-//     });
-//   } catch {
-//     res.status(404).json({
-//       status: "fail",
-//       message: "page not found",
-//     });
-//   }
-//   next();
-// };

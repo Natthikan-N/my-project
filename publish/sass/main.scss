@@ -10,6 +10,7 @@
 @import "layout/head";
 @import "layout/nav";
 @import "layout/footer";
+@import "layout/popup";
 
 @import "component/card";
 @import "component/button";
@@ -22,3 +23,4 @@
 @import "pages/createCore";
 @import "pages/qpointlist";
 @import "pages/updateQpointlist";
+@import "pages/updateComponent";

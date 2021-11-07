@@ -162,15 +162,21 @@ exports.updatecore = async (req, res, next) => {
   next();
 };
 
-exports.getInnerFinTubes = viewComponent.getComponentPart(InnerFinTubes);
-exports.getOuterFins = viewComponent.getComponentPart(OuterFins);
-exports.getSidePlate = viewComponent.getComponentPart(SidePlates);
-exports.getCupPlate = viewComponent.getComponentPart(CupPlates);
-exports.getCap = viewComponent.getComponentPart(Cap);
-exports.getPlateHeader = viewComponent.getComponentPart(PlateHeader);
-exports.getTankHeader = viewComponent.getComponentPart(TankHeader);
-exports.getSep = viewComponent.getComponentPart(Separator);
-exports.getJoint = viewComponent.getComponentPart(Joint);
+exports.getInnerFinTubes = viewComponent.getComponentPart(
+  InnerFinTubes,
+  "component"
+);
+exports.getOuterFins = viewComponent.getComponentPart(OuterFins, "component");
+exports.getSidePlate = viewComponent.getComponentPart(SidePlates, "component");
+exports.getCupPlate = viewComponent.getComponentPart(CupPlates, "component");
+exports.getCap = viewComponent.getComponentPart(Cap, "component");
+exports.getPlateHeader = viewComponent.getComponentPart(
+  PlateHeader,
+  "component"
+);
+exports.getTankHeader = viewComponent.getComponentPart(TankHeader, "component");
+exports.getSep = viewComponent.getComponentPart(Separator, "component");
+exports.getJoint = viewComponent.getComponentPart(Joint, "component");
 //exports.getComponent =viewComponent
 
 exports.getAllInnerFin = viewComponent.getAllProperties(InnerFinTubes);
@@ -182,3 +188,48 @@ exports.getAllSeparator = viewComponent.getAllProperties(Separator);
 exports.getAllCap = viewComponent.getAllProperties(Cap);
 exports.getAllCupPlate = viewComponent.getAllProperties(CupPlates);
 exports.getAllJoint = viewComponent.getAllProperties(Joint);
+
+exports.getToUpdateInnerfintube = viewComponent.getComponentPart(
+  InnerFinTubes,
+  "_updateComponent"
+);
+
+exports.getToUpdateOuterFin = viewComponent.getComponentPart(
+  OuterFins,
+  "_updateComponent"
+);
+
+exports.getToUpdateCupPlate = viewComponent.getComponentPart(
+  CupPlates,
+  "_updateComponent"
+);
+
+exports.getToUpdateSeparator = viewComponent.getComponentPart(
+  Separator,
+  "_updateComponent"
+);
+
+exports.getToUpdateCap = viewComponent.getComponentPart(
+  Cap,
+  "_updateComponent"
+);
+
+exports.getToUpdateJoint = viewComponent.getComponentPart(
+  Joint,
+  "_updateComponent"
+);
+
+exports.getToUpdateSidePlate = viewComponent.getComponentPart(
+  SidePlates,
+  "_updateComponent"
+);
+
+exports.getToUpdatePlateHeader = viewComponent.getComponentPart(
+  PlateHeader,
+  "_updateComponent"
+);
+
+exports.getToUpdateTankHeader = viewComponent.getComponentPart(
+  TankHeader,
+  "_updateComponent"
+);

@@ -102,7 +102,6 @@ exports.getCoreId = getPartIdmiddleware.getSinglePartId(Core);
 exports.getCoreIdId = getPartIdmiddleware.getCoreId(Core);
 
 const reStructure = (ojb) => {
-  // console.log(ojb);
   const core = {
     model: ojb.model,
     partNo: ojb.partNo,
@@ -202,13 +201,8 @@ exports.createCore = async (req, res) => {
 
 exports.updateCoreAPI = async (req, res) => {
   try {
-    console.log("hello from controller");
-    console.log(req.body);
-    // req.id = req.partNo;
-    // console.log(req.body);
     const newCore = reStructure(req.body);
-    console.log(newCore);
-    // Object.assign(newCore, { img: `/img/Cores/${req.file.filename}` });
+
     if (req.file)
       Object.assign(newCore, { img: `/img/Cores/${req.file.filename}` });
 
